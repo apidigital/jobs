@@ -1,0 +1,151 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+plugins
+dir
+
+Rakefile
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+c4e1892ba9136dd64857ea41f2334baa
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+.autotest
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+b1da8089d1b3b0e7ef157fc16006fc12
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+rake_tasks
+dir
+
+stories
+dir
+
+spec
+dir
+
+README
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+0ea971e85d00ecb7fad45dc645b39dd2
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+.gitignore
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+7193433966934327275325aa572e4a99
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+TODO
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+68b329da9893e34099c7d8ad5cb9c940
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+init.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+640f74b8156893c1bc98a2050c8589d3
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+story_server
+dir
+
+lib
+dir
+
+failing_examples
+dir
+
+bin
+dir
+
+CHANGES
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+10a44756c8886b19d26f003d76306c9a
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+MIT-LICENSE
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+e52fb646a736962ed0bdd48ae2c242de
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+examples
+dir
+

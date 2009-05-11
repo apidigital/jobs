@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/story
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+html_formatter.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+1644fd8fb5a193420bfed561c17e84f1
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+plain_text_formatter.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+473ea8a4baeab3504c1e769c63dcd3e4
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

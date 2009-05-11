@@ -1,0 +1,109 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/calendar_helper
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+test
+dir
+
+History.txt
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+ee74de2d34fd51fb9912ac2b896c3aca
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+Rakefile
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+1455db243315f02d7c9ccfe74c1c08ed
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+.gitignore
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+16ab16ae057fcab9bf7846215db0bf23
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+init.rb
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+c581ffa7cedb72e5770630db463a5fb4
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+lib
+dir
+
+generators
+dir
+
+MIT-LICENSE
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+ab9b97df69fac2311dca359eb541485e
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+README.txt
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+e8277cdae007e9333921df1fe68340f8
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

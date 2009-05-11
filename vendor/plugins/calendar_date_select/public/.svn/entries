@@ -1,0 +1,49 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/calendar_date_select/public
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+images
+dir
+
+javascripts
+dir
+
+stylesheets
+dir
+
+blank_iframe.html
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+7fb0cca757b8f76223358aa5fe619376
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

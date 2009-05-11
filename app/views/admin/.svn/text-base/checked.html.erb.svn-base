@@ -1,0 +1,17 @@
+<h1>Checked Applications</h1><br />
+
+<% for submission in @submissions %>
+	<ul>
+	<li><%= link_to 'View Application', submission %></li>
+	<li>Applicant Name: <%= link_to submission.user.profile.firstname+" "+submission.user.profile.lastname, profile_path(submission.user.profile) %></li>
+	<li>Position: <%= link_to submission.position.name, position_path(submission.position) %></li>
+	<li>Resume: 
+		<% if submission.user.resume %>
+		<%= link_to submission.user.resume.filename, submission.user.resume.public_filename %>
+		<% else %>
+		No Resume
+		<% end %>
+	</li>
+	</ul>
+	<br />
+<% end %>

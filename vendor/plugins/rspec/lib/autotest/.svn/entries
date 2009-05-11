@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/lib/autotest
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+discover.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+7eb0d9d3bf84f5349c51244109548262
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+rspec.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+126534250d1b335e7ef5408ef3cf05c4
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

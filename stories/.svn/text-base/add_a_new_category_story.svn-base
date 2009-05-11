@@ -1,0 +1,27 @@
+Story: Administrator adds a new category
+
+	As an administrator
+	I want to create a new category
+	So I can add new open positions
+	
+	Scenario: Admin fills out category field
+	
+		Given a administrative user
+		And a category named 'FooBar'
+		And there is no category with this name
+	
+		When the admin submits a new category name
+	
+		Then redirect to category path
+		And there should be a category with name 'FooBar'
+	
+	Scenario: Non Admin tries to fill out category 
+		Given a non-administrative user
+		And a category named 'FooBar'
+		
+		When the user submits a new category name
+		
+		Then there should not be a category with the name 'FooBar'
+		And Redirect to '/'
+		
+		

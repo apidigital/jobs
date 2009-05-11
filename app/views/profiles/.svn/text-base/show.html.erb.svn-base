@@ -1,0 +1,72 @@
+<h1>Info For <%= @profile.user.login %> 
+<%= link_to '(edit)', edit_profile_path(@profile) if current_user && current_user.profile.admin? %>
+</h1>
+
+<div class="info">
+	<div class="field">
+		<label>Name:</label>
+		<div class="fn">
+			<span class="profile_full_name"><%= @profile.firstname %> <%= @profile.lastname %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>Address:</label>
+		<div class="address">
+			<span class="profile_address"><%= @profile.address1 %><br /><%= @profile.address2 %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>City:</label>
+		<div class="city">
+			<span class="profile_city"><%= @profile.city %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>State:</label>
+		<div class="state">
+			<span class="profile_state"><%= @profile.state %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>Zip:</label>
+		<div class="zip">
+			<span class="profile_zip"><%= @profile.zip %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>Daytime Phone:</label>
+		<div class="daytime_phone">
+			<span class="profile_daytime_phone"><%= if !@profile.dayphone.blank? then @profile.dayphone else "None" end %></span>
+		</div>
+	</div>
+	<div class="field">
+		<label>Evening Phone:</label>
+		<div class="evening_phone">
+			<span class="profile_evening_phone"><%= if !@profile.eveningphone.blank? then @profile.eveningphone else "None" end %></span>
+		</div>
+	</div>
+	<div class="field"></div>
+	<div class="field">
+		<label>Resume</label>
+		<div class="resume">
+			<% if @profile.user.resume %>
+				<%= link_to_remote_redbox("Preview", link_to_remote_options = {:url => resume_path(@profile.user.resume)})%>
+				<%= link_to "Download", @profile.user.resume.public_filename %> 
+			<% else %>
+				No Resume
+			<% end %>
+		</div>
+	</div>
+	<div class="field">
+		<label></label>
+		<div class="evening_phone">
+			<span class="profile_evening_phone"></span>
+		</div>
+	</div>
+</div>
+<div class="submissions">
+	<h2>Submissions</h2>
+	<% for submission in @profile.user.submissions %>
+		<%= link_to submission.position.name, submission_path(submission) %> (<%= submission.step %>)
+	<% end %>
+</div>

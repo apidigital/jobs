@@ -1,0 +1,10 @@
+<% render :layout => 'positions/position', :object => @position do %>
+	<%= textilize @position.description %>
+<% end %>
+<p>
+	<%#= Need to write something here to check and see if the user has applied! %>
+	<%= link_to 'Apply Now!', position_questions_path(@position) %>
+</p>
+<%# This needs to be hidden from users who do not have permissions to edit information. %>
+<%#= link_to 'Edit', edit_position_path(@position) %>
+<%#= link_to 'Back', positions_path %>

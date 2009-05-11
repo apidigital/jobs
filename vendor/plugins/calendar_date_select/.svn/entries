@@ -1,0 +1,100 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/calendar_date_select
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+test
+dir
+
+init.rb
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+4f1b8b56b9c1620698801d4bb870fe4c
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+lib
+dir
+
+CHANGELOG
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+12e34c39dfeec2111eb64dd9f2464614
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+calendar_date_select.gemspec
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+bcacf3611be9b698162a0eab42a6544a
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+MIT-LICENSE
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+abf84495f9183267a5187da4d0e7b5a2
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+js_test
+dir
+
+README
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+ab8485ae00cebc0b7ee5680c34de6972
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+public
+dir
+

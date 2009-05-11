@@ -1,0 +1,43 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec-rails/lib/spec
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+rails
+dir
+
+rails.rb
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+fe7d238ffdffc395d97e21625f45794f
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

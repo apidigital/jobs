@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+    background: #fff;
+	font: .74em "Trebuchet MS" Verdana, Arial, sans-serif;
+	line-height: 1.5em; 
+}
+a {
+	color: #3B6EBF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.info {
+	line-height:1.4em;
+	margin: 0 0 5px 0;
+}
+
+.field {
+	line-height:1.4em;
+}
+.field label {
+	color: #777777;
+	display: block;
+	float: left;
+	margin-right: 1em;
+	padding: 0.1em 0;
+	text-align: right;
+	width: 8em;
+}
+.field div {
+	text-align: left;
+	overflow:hidden;
+	margin: 2px;
+	padding: 2px;
+}
+
+.submissions {
+	display: block;
+	margin-top: 5px;
+}
+
+.position {
+	border-bottom: black solid 1px;
+	padding-bottom: 5px;
+}
+
+.invisible {
+	background: #FFAEAE;
+}
+
+.conflict {
+	background: #FFAEAE;
+}
+
+.title {
+	font-size: 1.8em;
+}
+
+#wrap {
+margin: 20px auto;
+width: 924px;
+background: #fff 
+}
+
+#top { 
+height: 30px;
+}
+
+#content {
+padding: 0 40px 0 40px;
+}
+
+#bottom {
+
+height: 30px;
+}
+
+
+.header {
+height: 100px;
+background: #85ACF7 url('../images/hidr.jpg');
+}
+
+.header h1 { padding-left: 17px; padding-top: 22px; font-size: 22px; color: #FFF; }
+.header h1 a { font-size: 22px; color: #FFF; text-decoration: none;}
+.header h2 { padding-left: 17px; padding-top: 0px; font-size: 17px; color: #FFF; }
+
+.breadcrumbs { 
+    background: #F6F9FB; 
+	border-bottom: 1px solid #E1E1E1; 
+	padding: 5px;
+	min-height: 20px;
+	/*margin-bottom:20px;*/
+	
+}
+
+.notices {
+	background: #C2DC72;
+	border: 1px solid #1A8105;
+	padding: 5px;
+}
+
+.yellow {
+	background: #FAFAD2;
+	border: 1px solid #ff0;
+	margin: 4px 4px 12px 4px;
+}
+
+.fieldset {
+	padding: 6px;
+}
+.fieldset legend {
+	font-size: 1.8em;
+	margin-bottom: 6px;
+}
+
+.spacer {
+	margin-bottom:20px;
+}
+	
+.middle {
+	float: left;
+	width: 59%;
+	margin: 0 10px;
+	padding: 1% 1%;
+	
+}
+.middle h1 {
+	line-height: 1.1em;
+}
+
+.jobdesc p {
+		font-size: 1.0em;
+		line-height: 1.4em; 
+		text-align: justify;
+}
+
+.right {
+	float: left;
+	width: 30%;
+	margin: 0 10px;
+	padding: 1% 1%;
+	
+}
+
+.right ul {
+	padding: 20px 0 15px 20px;
+	margin:0;
+}
+
+.right li {
+	margin-bottom:5px;
+	list-style-type: square;
+	color: #3B6EBF;
+}
+
+.middle h2 { color: #3B6EBF; font-size: 16px; margin-bottom: 10px; margin-top: 10px;}
+.right h2 { color: #3B6EBF; font-size: 14px; margin-top: 15px;}
+
+
+#clear {
+	display: block;
+	clear: both;
+	width: 100%;
+	height:1px;
+	overflow:hidden;
+}
+
+#footer {
+	text-align: center;
+	color: #666;
+}
+
+

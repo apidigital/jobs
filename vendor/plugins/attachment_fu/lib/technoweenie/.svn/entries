@@ -1,0 +1,43 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/attachment_fu/lib/technoweenie
+svn://svn.apid.com/jobs
+
+
+
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+attachment_fu
+dir
+
+attachment_fu.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+e1799c12050df9459030513a7b40dafb
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+

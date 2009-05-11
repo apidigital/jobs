@@ -1,0 +1,17 @@
+<h1>Listing positions</h1><br />
+
+<% for position in @positions %>
+  <ul>
+    <li>Name: <%=h position.name %></li>
+    <li>Description: <%=h truncate(position.description, 300) %></li>
+    <li>Category: <%=h position.category.name %></li>
+    <li><%= link_to 'Show', position %></li>
+    <li><%= link_to 'Edit', edit_position_path(position) %></li>
+    <li><%= link_to 'Destroy', position, :confirm => 'Are you sure?', :method => :delete %></li>
+  </ul>
+<br />
+<% end %>
+
+<br />
+
+<%#= link_to 'New position', new_position_path %>

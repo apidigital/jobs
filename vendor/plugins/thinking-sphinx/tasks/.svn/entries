@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/thinking-sphinx/tasks
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+thinking_sphinx_tasks.rake
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+f3fc35fad8a792cbd2e8bf875ec388dc
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+thinking_sphinx_tasks.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+f334207abf81c37bad9c54f1db004e4d
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

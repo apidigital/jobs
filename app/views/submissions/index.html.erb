@@ -1,0 +1,18 @@
+<h1>Listing submissions</h1><br />
+
+<% for submissions in @submissions %>
+	<ul>
+	<li><%= link_to 'Check Application', submissions %></li>
+	<li>Applicant Name: <%= link_to submissions.user.profile.firstname+" "+submissions.user.profile.lastname, profile_path(submissions.user.profile) %></li>
+	<li>Position: <%= link_to submissions.position.name, position_path(submissions.position) %></li>
+	<li>Resume: 
+		<% if submissions.user.resume %>
+			<%= link_to_remote_redbox("Preview", link_to_remote_options = {:url => resume_path(submissions.user.resume)})%>
+			<%= link_to "Download", submissions.user.resume.public_filename %>
+		<% else %>
+		No Resume
+		<% end %>
+	</li>
+	</ul>
+	<br />
+<% end %>

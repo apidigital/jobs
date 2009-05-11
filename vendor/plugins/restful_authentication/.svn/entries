@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/restful_authentication
+svn://svn.apid.com/jobs
+
+
+
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+Rakefile
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+ebfd713e05e35c55392c1999bf3bfb44
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+lib
+dir
+
+install.rb
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+3773dce53854a282602d79a631a1ff8a
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+generators
+dir
+
+README
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+55b3f6d8c8e815aaad6c508f9d3540e2
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+

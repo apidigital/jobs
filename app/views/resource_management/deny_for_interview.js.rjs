@@ -1,0 +1,2 @@
+page.replace_html "approvedeny#{@submission.id}", "<span>Application has been denied.</span> "
+page.insert_html  :bottom, "approvedeny#{@submission.id}", "#{ link_to_remote 'Approve', :url => {:controller => "resource_management", :action => :approve_for_interview, :id => @submission}}?"

@@ -1,0 +1,179 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/lib/spec
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+story
+dir
+
+interop
+dir
+
+story.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+4ab3d712b369a8c7cbf667ad1e3349c8
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+rake
+dir
+
+version.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+6d21f8e88da321ab192056c33f8e648e
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+translator.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+60e5faba8cdd949f28ffb81bfa7702b9
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+example
+dir
+
+example.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+8dce434cefbe38cdd7ec56a46910bc3b
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+extensions
+dir
+
+extensions.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+b5767724f28b18993ec36a7c304d3592
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+has-props
+
+adapters
+dir
+
+adapters.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+ce2ef62009fb3c69a13c78956e2abd7e
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+expectations
+dir
+
+matchers
+dir
+
+matchers.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+b053febbe15d1baada0b1849ed1ad5ec
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+expectations.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+eaa26a937cfea67588c81da8651cfff8
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+runner
+dir
+
+runner.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+0c6f73ac6225930c264d1c279c3bf449
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+mocks
+dir
+
+mocks.rb
+file
+
+
+
+
+2008-10-24T21:22:23.000000Z
+861ed21000f27acd46f54f43bb30f9ad
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

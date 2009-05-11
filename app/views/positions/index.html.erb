@@ -1,0 +1,17 @@
+<% if params[:query] %>
+	<h1>Results for '<%= params[:query]%>'.</h1> 
+<% else %>
+	<h1> Current Positions </h1>
+<% end %>
+<% if current_user && current_user.admin? %>
+	<%= link_to '(New)', new_position_path %><br />
+<% end %>
+<ul>
+<% for position in @positions %>
+	<li><%= link_to position.name, position_path(position) %> [<%= link_to position.category.name, category_path(position.category.id) %>] 
+	<% if current_user && current_user.admin? %>
+		(<%= link_to 'Edit', edit_position_path(position) %>) (<%= link_to 'Destroy', position, :confirm => 'Are you sure?', :method => :delete %>)</li>
+	<% end %>
+<% end %>
+</ul>
+<br />

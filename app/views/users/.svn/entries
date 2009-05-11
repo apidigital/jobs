@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/app/views/users
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+change_password.html.erb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+f0620e927a80d95568b264a7b4940564
+2008-07-08T21:04:57.598093Z
+80
+rbrewer
+
+new.html.erb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+feaf9d671f0d524b27ab037532f46e24
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

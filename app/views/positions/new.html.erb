@@ -1,0 +1,27 @@
+<h1>New position</h1>
+
+<% form_for(@position) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+		<%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+	<%= f.collection_select(:category_id, @categories, :id, :name) %>
+		<%#= f.label :category_id %><br />
+    <%#= f.text_field :category_id %>
+  </p>
+	<p><label for="active">Active?:</label>
+<%= f.check_box 'active' %></p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+	<%= link_to "Formatting Help", "http://hobix.com/textile/quick.html"%>
+<% end %>
+
+<%= link_to 'Back', positions_path %>

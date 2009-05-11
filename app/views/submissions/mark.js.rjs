@@ -1,0 +1,15 @@
+if @saved
+  page.replace_html('saved', "<span id='update_message'>Submission has been updated.</span><br />")
+  unless @submission.checked_on?
+    page.insert_html(:bottom, 'saved', "<span>#{link_to_remote "Mark Viewed.", :url => {:action => :mark, :id => @submission}}</span>")
+  else
+    page.insert_html(:bottom, 'saved', "<span>#{link_to_remote "Unmark Viewed.", :url => {:action => :mark, :id => @submission}}</span>")
+  end
+else
+  page.insert_html(:bottom, 'saved', "<span id='update_message' style='background: red; color: white;'>Submission could not be updated.</span>")
+end
+
+page.visual_effect :highlight, 'saved'
+page.delay(5) do
+  page.remove('update_message')
+end

@@ -1,0 +1,115 @@
+Story: User signs up for an account
+
+	As a user
+	I want to sign up for an account
+	So I can apply for a job.
+	
+	Scenario: User fills out form correctly
+	
+		Given a username 'brittany'
+		And a password 'foobar'
+		And an email 'brittany@bar.com'
+		
+		And a firstname 'foo'
+		And a lastname 'bar'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		When the user creates an account with username, password, email, firstname, lastname, address, city, state, zip
+		
+		Then there should be a user named 'brittany'
+		And there should be a profile for 'brittany'
+		And should redirect to '/'
+		
+	Scenario: User fills out form with too short of a username
+	
+		Given a username 'fo'
+		And a password 'foobar'
+		And an email 'foo@bar.com'
+		
+		And a firstname 'foo'
+		And a lastname 'bar'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		When the user creates an account with username, password, email, firstname, lastname, address, city, state, zip
+		
+		Then there should not be a user named 'fo'
+		And should return a '200'
+		
+	Scenario: User fills out form without a first name		
+		Given a username 'foobar'
+		And a password 'foobar'
+		And an email 'foo@bar.com'
+		
+		And a lastname 'bar'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		When the user creates an account with username, password, email, firstname, lastname, address, city, state, zip
+		
+		Then there should not be a user named 'foobar'
+		And should return a '200'
+		
+	Scenario: User fills out form without a last name		
+		
+		Given a username 'foobar'
+		And a password 'foobar'
+		And an email 'foo@bar.com'
+		
+		And a firstname 'foo'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		When the user creates an account with username, password, email, firstname, lastname, address, city, state, zip
+		
+		Then there should not be a user named 'foobar'
+		And should return a '200'
+		
+	Scenario: User types in two different passwords
+		
+		Given a username 'foobar'
+		And a password 'foobar'
+		And a password_confirmation 'barfoo'
+		And an email 'foo@bar.com'
+		
+		And a firstname 'foo'
+		And a lastname 'bar'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		When the user creates an account with username, password, password_conf, email, firstname, lastname, address, city, state, zip
+		
+		Then there should not be a user named 'foobar'
+		And should return a '200'
+	
+	Scenario: User tries a username that is already taken
+	
+		Given a username 'foobar'
+		And a password 'foobar'
+		And an email 'foo@bar.com'
+		
+		And a firstname 'foo'
+		And a lastname 'bar'
+		And an address '123 foobar st.'
+		And a city 'Madison'
+		And a state 'AL'
+		And a zip '35757'
+		
+		And a previous user with the name 'foobar'
+		
+		When the user creates an account with username, password, email, firstname, lastname, address, city, state, zip
+		
+		Then there should be a user named 'foobar'
+		And the user 'foobar' should not have been updated
+		And should return a '200'

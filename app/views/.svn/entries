@@ -1,0 +1,79 @@
+9
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/app/views
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T17:10:25.864116Z
+103
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+answers
+dir
+
+resumes
+dir
+
+resource_management
+dir
+
+profiles
+dir
+
+categories
+dir
+
+applications
+dir
+
+positions
+dir
+
+front
+dir
+
+admin
+dir
+
+questions
+dir
+
+layouts
+dir
+
+users
+dir
+
+search
+dir
+
+shared
+dir
+
+sessions
+dir
+
+forgotten
+dir
+
+submissions
+dir
+

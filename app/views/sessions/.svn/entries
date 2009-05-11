@@ -1,0 +1,40 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/app/views/sessions
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+new.html.erb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+fcd2a388127313ae43e397976c3cab55
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

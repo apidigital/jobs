@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/thinking-sphinx/lib/thinking_sphinx/index
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+faux_column.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+5df6d796c622df6a392ae55b09f277d6
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+builder.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+f046afb3fc5b97c35540fae8587e162e
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

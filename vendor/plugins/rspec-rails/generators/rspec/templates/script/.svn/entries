@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec-rails/generators/rspec/templates/script
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+spec_server
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+fb55b0f3fabf2780199f7e39569a35a4
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+spec
+file
+
+
+
+
+2008-10-24T21:22:20.000000Z
+3b01b40d35973243f354ede2a22a43fa
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

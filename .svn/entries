@@ -1,0 +1,106 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T17:10:25.864116Z
+103
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+test
+dir
+
+app
+dir
+
+log
+dir
+
+Rakefile
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+17f2f134da4cd31ea095d5868ca89e86
+2008-06-06T18:08:29.648421Z
+1
+rbrewer
+
+components
+dir
+
+db
+dir
+
+stories
+dir
+
+spec
+dir
+
+vendor
+dir
+
+README
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+aeeb3047c6c30d56e72a24a14f7ebcf7
+2008-06-06T18:08:29.648421Z
+1
+rbrewer
+
+tmp
+dir
+
+Capfile
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+d3c3576398a4876c920553b714bc177f
+2008-07-08T18:50:39.137038Z
+75
+pjdavis
+
+script
+dir
+
+config
+dir
+
+doc
+dir
+
+lib
+dir
+
+public
+dir
+

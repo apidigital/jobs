@@ -1,0 +1,58 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/acts_as_list
+svn://svn.apid.com/jobs
+
+
+
+2008-06-12T21:18:49.170316Z
+13
+rbrewer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+test
+dir
+
+init.rb
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+0bdbdc825f80fda1a94852a82b68ffd4
+2008-06-12T21:18:49.170316Z
+13
+rbrewer
+
+lib
+dir
+
+README
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+42212b5cb681c9888d56f9c0f36e1e02
+2008-06-12T21:18:49.170316Z
+13
+rbrewer
+

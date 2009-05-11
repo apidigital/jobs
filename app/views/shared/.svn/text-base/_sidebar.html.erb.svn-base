@@ -1,0 +1,8 @@
+<ul class="asdf">
+  <% for item in collection %>
+    <li class="asdf">
+      <%= link_to title.call(item), link.call(item) %>
+      <%= "(#{after_link.call(item)})" if after_link %>
+    </li>
+  <% end %>
+</ul>

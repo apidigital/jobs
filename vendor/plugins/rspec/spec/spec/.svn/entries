@@ -1,0 +1,94 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/spec/spec
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+extensions
+dir
+
+interop
+dir
+
+story
+dir
+
+adapters
+dir
+
+runner_spec.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+17c2deb89420a08cae2e1ad0ad0c79ba
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+translator_spec.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+38b51768bd5bf541e189e92213efeec2
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+expectations
+dir
+
+matchers
+dir
+
+runner
+dir
+
+spec_classes.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+d117bbde1949673089d3944f95409a9a
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+example
+dir
+
+package
+dir
+
+mocks
+dir
+

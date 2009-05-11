@@ -1,0 +1,33 @@
+<% for position in @positions %>
+	<h1><%= position.name %></h1>
+	<% if position.submissions.questionnaire_step.empty? %>
+		<span> No Applications. </span>
+	<% else %>
+		<% for submission in position.submissions.questionnaire_step %>
+			<%= link_to "#{ submission.user.profile.firstname } #{ submission.user.profile.lastname }", profile_path (submission.user.profile) %> 
+			(<%= link_to "notes", "#"%>)
+			<%= submission.created_at.to_s(:short) %>
+			<%= link_to "View Questionnaire", submission_path(submission) %>
+			<div id="approvedeny<%= submission.id %>">
+				<%= link_to_remote "Approve", :url => {:controller => "resource_management", :action => :approve_for_interview, :id => submission} %>/
+				<%= link_to_remote "Deny", :url => {:controller => "resource_management", :action => :deny_for_interview, :id => submission} 	%>
+			</div>
+			<br />
+		<% end %> 
+	<% end %>
+<% end %>
+<hr />
+
+<h1>Denied</h1><%= link_to_function("Show/Hide Denied Questionnaires", " Effect.toggle('denied', 'slide')") %>
+<hr />
+<div id="denied">
+<% for submission in @denied_submissions %>
+		<%= link_to "#{ submission.user.profile.firstname } #{ submission.user.profile.lastname }", profile_path (submission.user.profile) %> 
+		(<%= link_to "notes", "#"%>)
+		<%= submission.created_at.to_s(:short) %>
+		<%= link_to "View Questionnaire", submission_path(submission) %>
+		<div id="approvedeny<%= submission.id %>">
+			<span>Application has been denied. <%= link_to_remote "Approve", :url => {:controller => "resource_management", :action => :approve_for_interview, :id => submission} %>?</span>
+		</div>
+<% end %>
+</div>

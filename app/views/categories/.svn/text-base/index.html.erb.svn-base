@@ -1,0 +1,14 @@
+<h1>Categories</h1>
+<% if current_user && current_user.profile.admin? %>
+<%= link_to 'New category', new_category_path %>
+<% end %>
+<ul>
+<% for category in @categories %>
+    <li><%= link_to category.name, category_path(category) %>
+	<% if current_user && current_user.profile.admin? %>
+	<%= link_to '(edit)', edit_category_path(category) %> 
+	<%= link_to '(delete)', category, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</li>
+<% end %>
+</ul>

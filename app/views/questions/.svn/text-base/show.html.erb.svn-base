@@ -1,0 +1,18 @@
+<p>
+  <b>Content:</b>
+  <%=h @question.content %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%=h @question.display_order %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @question.position_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_position_question_path(@question.position, @question) %> |
+<%= link_to 'Back', position_questions_path %>

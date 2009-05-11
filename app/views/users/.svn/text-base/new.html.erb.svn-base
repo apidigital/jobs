@@ -1,0 +1,53 @@
+<%= error_messages_for :user %>
+<fieldset class="fieldset signup">
+	<legend class="fieldset signup">Signup</legend>
+	
+	<div class="notices yellow">
+		<span>Fields marked with a * are required.</span>
+	</div>
+	<% form_for :user, :url => users_path do |f| -%>
+	<p><label for="login">* Login</label><br/>
+	<%= f.text_field :login %></p>
+
+	<p><label for="email">* Email</label><br/>
+	<%= f.text_field :email %></p>
+
+	<p><label for="password">* Password</label><br/>
+	<%= f.password_field :password %></p>
+
+	<p><label for="password_confirmation">* Confirm Password</label><br/>
+	<%= f.password_field :password_confirmation %></p>
+	<%= error_messages_for :profile %>
+	<% fields_for :profile do |profile| %>
+		<p><label for="firstname">* First Name</label><br />
+		<%= profile.text_field :firstname %>
+		</p>
+		<p><label for="lastname">* Last Name</label><br />
+		<%= profile.text_field :lastname %>
+		</p>
+		<p><label for="address1">* Address 1</label><br />
+		<%= profile.text_field :address1 %>
+		</p>
+		<p><label for="address2">Address 2</label><br />
+		<%= profile.text_field :address2 %>
+		</p>
+		<p><label for="city">* City</label><br />
+		<%= profile.text_field :city %>
+		</p>
+		<p><label for="state">* State</label><br />
+		<%= profile.text_field :state %>
+		</p>
+		<p><label for="zip">* Zip</label><br />
+		<%= profile.text_field :zip %>
+		</p>
+		<p><label for="dayphone">Daytime Phone</label><br />
+		<%= profile.text_field :dayphone %>
+		</p>
+		<p><label for="eveningphone">Evening Phone</label><br />
+		<%= profile.text_field :eveningphone %>
+		</p>
+	<% end %>
+	<br />
+	<p><%= submit_tag 'Sign up' %></p>
+	<% end -%>
+</fieldset>

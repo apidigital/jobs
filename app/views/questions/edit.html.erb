@@ -1,0 +1,24 @@
+<h1>Editing question</h1>
+
+<% form_for([@position, @question]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+		<%= f.label :display_order %><br />
+    <%= f.text_field :display_order %>
+  </p>
+  <p>
+		<%= f.label :position_id %><br />
+    <%= f.text_field :position_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', position_question_path(@question.position, @question) %> |
+<%= link_to 'Back', position_questions_path(@question.position) %>

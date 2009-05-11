@@ -1,0 +1,26 @@
+<h1>Scheduled Interviews</h1>
+<% for schedule in @scheduled_interviews %>
+	<span <%= 'class="conflict"' if !schedule.conflicts.empty? %>><%= link_to "Interview scheduled", submission_path(schedule) %> with <%= link_to "#{schedule.user.profile.firstname} #{schedule.user.profile.lastname}", profile_path(schedule.user.profile) %> on <%= schedule.interview_scheduled.to_s(:long) %>.</span><br />
+<% end %>
+
+<h1>Pending Interviews</h1>
+
+<% for position in @positions %>
+	<h2><%= position.name %></h2>
+	<% for submission in position.submissions.interview_step %>
+		<%= link_to "#{ submission.user.profile.firstname } #{ submission.user.profile.lastname }", profile_path (submission.user.profile) %> 
+		(<%= link_to "notes", "#"%>)
+		<%= submission.created_at.to_s(:short) %>
+		<%= link_to "View Questionnaire", submission_path(submission) %>
+		<div id="notes">
+		</div>
+			<% form_for submission do |f| %>
+				<%= f.calendar_date_select :interview_scheduled %>
+				<%= f.submit "Schedule"%>
+			<% end %>
+	<br />
+	<% end %> 
+	<% if position.submissions.interview_step.empty? %>
+		<span>No Pending Interviews</span>
+	<% end %>
+<% end %>

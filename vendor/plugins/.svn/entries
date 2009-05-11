@@ -1,0 +1,58 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+has-props
+
+svn:special svn:externals svn:needs-lock
+svn:externals
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+will_paginate
+dir
+
+attachment_fu
+dir
+
+thinking-sphinx
+dir
+
+redbox
+dir
+
+restful_authentication
+dir
+
+rspec-rails
+dir
+
+calendar_date_select
+dir
+
+acts_as_list
+dir
+
+calendar_helper
+dir
+
+rspec
+dir
+

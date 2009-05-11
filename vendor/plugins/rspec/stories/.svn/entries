@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/stories
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+interop
+dir
+
+helper.rb
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+6c263e3c2887fd3487b2bd1b22807078
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+stories
+dir
+
+mock_framework_integration
+dir
+
+example_groups
+dir
+
+resources
+dir
+
+all.rb
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+e722046f56a2345038ba5233ada1d0c6
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+pending_stories
+dir
+

@@ -1,0 +1,31 @@
+=== 0.3.1 / 2008-06-19
+
+* Fixed month_name_text with non-default month [jaggederest]
+
+=== 0.3.0 / 2008-06-11
+
+* Forked plugin
+* Removed gem spec to be just a plugin.
+* Removed requirement for month and year. Defaults to current month and year.
+* Added option for :month_name_text to override presentation of month name.
+
+=== 0.2.2 / 2007-08-29
+
+* Fixed missing tr tag in thead section. [Ian Struble]
+
+=== 0.2.1 / 2007-07-07
+
+* Added html output to the tests for visual confirmation or
+  for developing new stylesheets. Run 'rake' and look
+  in the 'test/output' directory.
+* Adds a 'today' CSS class to the cell for the current day.
+  Can be turned of by sending option 'show_today => false'.
+  [Chris O'Sullivan]
+* Added 'accessible' option to show extra fields around 
+  days that are not in the current month. [Tom Armitage]
+
+=== 0.2.0
+
+* Converted to hoe and a rubygem
+* Renamed to README.txt for Hoe compatibility
+

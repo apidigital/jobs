@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/spec
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+models
+dir
+
+fixtures
+dir
+
+spec_helper.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+e1831ee0684df91de390dc9c57412637
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+rcov.opts
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+55fe73f43f74d4403124e54fb71bf05a
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+spec.opts
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+333d15a1c992e53c98cfff637b1ef244
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

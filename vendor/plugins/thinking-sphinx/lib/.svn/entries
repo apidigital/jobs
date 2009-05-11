@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/thinking-sphinx/lib
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+test.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+5b61bf65152208b05999202e094155c3
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+riddle
+dir
+
+thinking_sphinx
+dir
+
+riddle.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+b0476afd4c261b6104eec056a13a17c9
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+thinking_sphinx.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+d251f0ec4df887432efaf424747631c8
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

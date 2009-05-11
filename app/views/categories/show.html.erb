@@ -1,0 +1,11 @@
+<p>
+  <h1><%=h @category.name %> <%= link_to("[edit]", edit_category_path(@category)) if current_user && current_user.admin? %></h1>
+</p>
+<h2>Current Positions</h2>
+<% for position in @positions %>
+	<% render :layout => 'positions/position', :object => position do %>
+		<%= textilize truncate(position.description, 300)%>
+	<% end %>
+<% end %>
+<%#= link_to 'Edit', edit_category_path(@category) %>
+<%#= link_to 'Back', categories_path %>

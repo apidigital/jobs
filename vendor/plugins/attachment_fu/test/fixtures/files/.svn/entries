@@ -1,0 +1,56 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/attachment_fu/test/fixtures/files
+svn://svn.apid.com/jobs
+
+
+
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+foo.txt
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+acbd18db4cc2f85cedef654fccc4a4d8
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+fake
+dir
+
+rails.png
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+450fc241fab7867e96536903244087f4
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+has-props
+

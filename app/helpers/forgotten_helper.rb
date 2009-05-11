@@ -1,0 +1,2 @@
+module ForgottenHelper
+end

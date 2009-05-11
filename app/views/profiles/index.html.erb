@@ -1,0 +1,62 @@
+ <h1>Listing profiles</h1><br />
+<%= link_to 'Change password', change_password_path %>
+<% form_for(@profile) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+		<%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+		<%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+		<%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+		<%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+		<%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+		<%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+		<%= f.label :dayphone %><br />
+    <%= f.text_field :dayphone %>
+  </p>
+  <p>
+		<%= f.label :eveningphone %><br />
+    <%= f.text_field :eveningphone %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+	</p>
+<% end %>
+<br />
+<h1>New resume</h1>
+<% form_for(@resume, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+	<label for="resume">Upload Your Resume:</label><br />
+    <%= f.file_field :uploaded_data %>
+  <p>
+    <%= submit_tag "Upload" %> (Please only upload text files, word files, or .pdf files!)
+  </p>
+<% end %><br />
+<h1>Current Resume</h1>
+<% if current_user.resume %>
+<%= current_user.resume.filename %>
+<%= link_to 'Destroy', current_user.resume, :confirm => 'Are you sure?', :method => :delete %>
+<% else %>
+N/A.
+<% end %>

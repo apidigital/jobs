@@ -1,0 +1,9 @@
+<h1>Newest Available Positions</h1>
+
+<% for position in @positions %>
+	<% render :layout => 'positions/position', :object => position do %>
+		<%= textilize truncate(position.description, 300) %>
+	<% end %>
+<% end %>
+
+<%= will_paginate @positions %>

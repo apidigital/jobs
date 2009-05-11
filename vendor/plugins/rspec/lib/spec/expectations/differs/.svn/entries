@@ -1,0 +1,40 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/lib/spec/expectations/differs
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+default.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+8c97017576d0c5f876353b96296dfe68
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

@@ -1,0 +1,20 @@
+<h1>User List</h1><br />
+<ul>
+<% for applicant in User.applicants %>
+	<% if applicant.profile %>
+		<li>
+			<%= link_to "#{applicant.profile.firstname} #{applicant.profile.lastname}", profile_path(applicant.profile) %> <%= link_to "[Edit]", edit_profile_path(applicant.profile)%>
+			<%= link_to "(Pending Application)", submission_path(applicant.submissions.find(:first)) if applicant.pending_application? %>
+		</li>
+	<% end %>
+<% end %>
+</ul>
+<h1>Administrators</h1>
+<ul>
+	<% for admin in User.administrators %>
+		<li>
+			<%= link_to admin.login, edit_profile_path(admin.profile) %>
+			<%= link_to "(Pending Application)", submission_path(admin.submissions.find(:first)) if admin.pending_application? %>
+		</li>
+	<% end %>
+</ul>

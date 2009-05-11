@@ -1,0 +1,40 @@
+9
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/app
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T17:10:25.864116Z
+103
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+helpers
+dir
+
+models
+dir
+
+controllers
+dir
+
+views
+dir
+

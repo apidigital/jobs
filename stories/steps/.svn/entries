@@ -1,0 +1,52 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/stories/steps
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+sign_up_for_account_steps.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+96ee38ac4e1de69d62d8d3ad3249d6cf
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+add_a_new_category_steps.rb
+file
+
+
+
+
+2008-10-24T21:22:19.000000Z
+1e2037b30ddde746fd23e37407ab10bc
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/calendar_date_select/js_test
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+unit
+dir
+
+prototype.js
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+bab4179aef164e96e866b03ac432bdf7
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+functional
+dir
+
+test.css
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+6af47889ae7a0b27c22f5df44db7ae0a
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+unittest.js
+file
+
+
+
+
+2008-10-24T21:22:21.000000Z
+934da23c6f8f0fac0a01bc7bf05ebb98
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+

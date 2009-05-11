@@ -1,0 +1,70 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/vendor/plugins/rspec/lib/spec/expectations
+svn://svn.apid.com/jobs
+
+
+
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+extensions
+dir
+
+handler.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+74dee09f250f57a83599bae7fa29cc2f
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+extensions.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+410737c1fdf6f1615e330aa5cb512ead
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+
+differs
+dir
+
+errors.rb
+file
+
+
+
+
+2008-10-24T21:22:22.000000Z
+f497f7c4e16c995a3dc005f8762a4d4b
+2008-07-13T03:23:43.243212Z
+87
+pjdavis
+

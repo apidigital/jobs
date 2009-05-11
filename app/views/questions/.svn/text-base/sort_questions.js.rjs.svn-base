@@ -1,0 +1,6 @@
+@questions.each do |question|
+  id = "question_#{question.id.to_s}"
+  page.remove id
+  page.insert_html :bottom, 'question_results', content_tag(:li, question.content, :id => id, :class => 'question')
+end
+page.sortable 'question_results', :url => {:controller => 'questions', :action => 'sort_questions', :id => '@position.id'}

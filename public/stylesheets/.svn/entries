@@ -1,0 +1,71 @@
+8
+
+dir
+103
+svn://svn.apid.com/jobs/trunk/public/stylesheets
+svn://svn.apid.com/jobs
+
+
+
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a60e4035-f333-dd11-bf3f-0007e95d40f8
+
+custom.css
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+cfc30ce1b2983989a8bd3927b42d6676
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+has-props
+
+calendar_date_select
+dir
+
+scaffold.css
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+1893346d0c0f2ea5966e203e756ba827
+2008-06-06T20:57:45.610751Z
+6
+rbrewer
+
+calendar
+dir
+
+redbox.css
+file
+
+
+
+
+2008-10-24T21:22:24.000000Z
+f9f9433ad2ea26f493957a693ca97190
+2008-10-21T15:12:52.725763Z
+99
+pjdavis
+
