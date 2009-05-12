@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  skip_before_filter :admin_check, :only => [:index, :create]
+  skip_before_filter :admin_check, :only => [:index, :create, :destroy]
   # GET /resumes
   # GET /resumes.xml
   def index
@@ -86,7 +86,7 @@ class ResumesController < ApplicationController
     @profile = context
 
     respond_to do |format|
-      format.html { redirect_to(profile_url(@profile)) }
+      format.html { redirect_to(profiles_url) }
       format.xml  { head :ok }
     end
   end

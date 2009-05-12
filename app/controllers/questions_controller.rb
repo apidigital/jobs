@@ -1,13 +1,6 @@
 class QuestionsController < ApplicationController
 skip_before_filter :admin_check, :only => [:index, :show]
 before_filter :login_check, :only => [ :index, :new ]
-#This after filter will remove the flash notice when it is displayed
-#on the index page after you go to another page so it won't hang around.
-######
-# 5/12/09 [Randall Brewer]: The follow after_filter is causing the notice
-# to appear rather than disappear. Commented out to fix layout glitch.
-######
-# after_filter :destroy_notice, :only => [ :index ]
   # GET /questions
   # GET /questions.xml
   def index
@@ -16,7 +9,7 @@ before_filter :login_check, :only => [ :index, :new ]
     @position = context
     @submission = Submission.find_by_user_id(current_user.id) if Submission.find_by_user_id_and_position_id(current_user, @position.id)
     if @submission
-      flash[:notice] = 'You have already applied for this position.'
+      flash.now[:notice] = 'You have already applied for this position.'
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -138,9 +131,5 @@ before_filter :login_check, :only => [ :index, :new ]
     unless logged_in?
       redirect_to('/login')
     end
-  end
-  
-  def destroy_notice
-    flash[:notice] = nil
   end
 end

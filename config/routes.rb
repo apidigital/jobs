@@ -1,30 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :submissions
-
   map.resources :resumes
-
   map.resources :front
-  
   map.resources :resumes
-
   map.resources :users, :has_one => :profile
-
   map.resource :session
-
   map.resources :positions do |pos|
     pos.resources :questions, :member => { :up => :put, :down => :put }
   end
-
   map.resources :answers
-
   map.resources :questions
-
   map.resources :categories
-
   map.resources :applications
-
   map.resources :profiles
-
   map.search '/search/:query', :controller => 'search', :action => 'search'
   map.search '/search', :controller => 'search', :action => 'search'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

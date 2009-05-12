@@ -97,8 +97,6 @@ background: #85ACF7 url('../images/hidr.jpg');
 	border-bottom: 1px solid #E1E1E1; 
 	padding: 5px;
 	min-height: 20px;
-	/*margin-bottom:20px;*/
-	
 }
 
 a.notices {
@@ -106,6 +104,15 @@ a.notices {
 	border: 1px solid #1A8105;
 	padding: 5px;
 	display:block;
+	cursor: default;
+}
+
+a.errors {
+	background: #ff3e31;
+	border: 1px solid #b32b23;
+	padding: 5px;
+	display:block;
+	cursor: default;
 }
 
 .notices {
@@ -189,4 +196,50 @@ a.notices {
 	padding: 0 40px 0 40px;
 }
 
+a.subtable {
+	display: block;
+	background: none;
+	cursor:default;
+}
 
+/*a.subtablemag {
+	background:url('../images/Crystal_Clear_action_viewmag.png');
+}*/
+
+a.subtable:hover {
+	display: block;
+	background:none;
+	cursor:default;
+}
+
+tr.normal {
+	background: #c2dc72;
+	padding:2px;
+}
+
+tr.normal td {
+	background: #c2dc72;
+	border: 1px solid #1A8105;
+	padding:2px;
+}
+
+tr.highlight {
+	background: #d1ee7a;
+	border: 1px solid #1A8105;
+	padding:2px;
+}
+
+tr.highlight td {
+	background: #d1ee7a;
+	border: 1px solid #1A8105;
+	padding:2px;
+}
+
+td.subheader {
+	border:1px solid black;
+	border-bottom:none;
+}
+
+td.subheader h2 {
+	margin:2px;
+}

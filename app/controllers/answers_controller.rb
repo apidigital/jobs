@@ -71,8 +71,10 @@ class AnswersController < ApplicationController
       @submission.save!
     end
     respond_to do |format|
-      flash[:notice] = 'Application was successfully appended. '
-      flash[:notice] += 'Please <a href="/profiles">upload a Resume</a>.' unless current_user.resume
+      flash[:notice] = 'Application was successfully appended.<br />'
+      unless current_user.resume
+      	flash[:notice] += '<b>Please upload a resume to your profile!</b>'
+      end
       format.html { redirect_to("/") }
     end
     # rescue
