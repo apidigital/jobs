@@ -1,6 +1,5 @@
 require 'digest/md5'
 class ForgottenController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:sendmail, :reset]
   def sendmail
   	recipient = params[:email]

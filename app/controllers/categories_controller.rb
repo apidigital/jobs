@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-layout 'layout'
 skip_before_filter :admin_check, :only => [:index, :show]
   # GET /categories
   # GET /categories.xml

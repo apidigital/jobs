@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout 'layout'
   # Be sure to include AuthenticationSystem in Application Controller instead
   skip_before_filter :admin_check, :only => [:create, :new, :change_password, :change_password_update]
   

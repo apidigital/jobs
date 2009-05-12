@@ -1,6 +1,5 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:create, :destroy, :new]
   # Be sure to include AuthenticationSystem in Application Controller instead
   #include AuthenticatedSystem

@@ -1,5 +1,4 @@
 class ResourceManagementController < ApplicationController
-  layout 'layout'
   def index
     @interviews = Submission.scheduled_interviews
     @applicants = User.applicants

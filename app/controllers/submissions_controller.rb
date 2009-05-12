@@ -1,5 +1,4 @@
 class SubmissionsController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:create, :update]
   # GET /submissions
   # GET /submissions.xml

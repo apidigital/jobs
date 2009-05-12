@@ -1,7 +1,5 @@
 class SearchController < ApplicationController
   
-  layout 'layout'
-  
   skip_before_filter :admin_check
   
   def search

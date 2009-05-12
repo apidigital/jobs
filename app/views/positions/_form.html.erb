@@ -1,7 +1,4 @@
-<%= render :partial => 'form'%>
-<!--
 <h1>New position</h1>
-
 <% form_for(@position) do |f| %>
   <%= f.error_messages %>
 
@@ -13,18 +10,24 @@
 		<%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
-  <p>
+  <p>Category: 
 	<%= f.collection_select(:category_id, @categories, :id, :name) %>
 		<%#= f.label :category_id %><br />
     <%#= f.text_field :category_id %>
   </p>
 	<p><label for="active">Active?:</label>
 <%= f.check_box 'active' %></p>
+<%= link_to "Formatting Help", "http://hobix.com/textile/quick.html"%>
+<hr /><br />
+	<h1>Questions</h1><br />
+	<div id="questions">
+		<%= render :partial => 'question', :collection => @position.questions %>
+	</div>
+	<p>
+		<%= add_question_link "Add a Question" %>
   <p>
     <%= f.submit "Create" %>
   </p>
-	<%= link_to "Formatting Help", "http://hobix.com/textile/quick.html"%>
 <% end %>
 
 <%= link_to 'Back', positions_path %>
--->

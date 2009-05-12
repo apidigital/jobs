@@ -1,5 +1,4 @@
 class PositionsController < ApplicationController
-layout 'layout'
   skip_before_filter :admin_check, :only => [:index, :show]
   # GET /positions
   # GET /positions.xml
@@ -31,6 +30,7 @@ layout 'layout'
   # GET /positions/new.xml
   def new
     @position = Position.new
+    @position.questions.build
     @categories = Category.find(:all)
     respond_to do |format|
       format.html
@@ -65,8 +65,9 @@ layout 'layout'
   # PUT /positions/1
   # PUT /positions/1.xml
   def update
+  	params[:position][:existing_question_attributes] ||= {}
+  	
     @position = Position.find(params[:id])
-
     respond_to do |format|
       if @position.update_attributes(params[:position])
         flash[:notice] = 'Position was successfully updated.'

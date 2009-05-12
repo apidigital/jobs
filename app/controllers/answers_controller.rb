@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:index, :show, :create, :update]
   # GET /answers
   # GET /answers.xml

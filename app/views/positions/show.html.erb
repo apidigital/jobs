@@ -1,5 +1,6 @@
 <% render :layout => 'positions/position', :object => @position do %>
-	<%= textilize @position.description %>
+	<br />
+	<%= textilize @position.description.gsub(/\s\s/, '<br />') %>
 <% end %>
 <p>
 	<%#= Need to write something here to check and see if the user has applied! %>

@@ -1,5 +1,4 @@
 class ApplicationsController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:index, :new, :create]
   # GET /applications
   # GET /applications.xml

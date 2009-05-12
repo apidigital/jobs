@@ -101,6 +101,13 @@ background: #85ACF7 url('../images/hidr.jpg');
 	
 }
 
+a.notices {
+	background: #C2DC72;
+	border: 1px solid #1A8105;
+	padding: 5px;
+	display:block;
+}
+
 .notices {
 	background: #C2DC72;
 	border: 1px solid #1A8105;
@@ -127,10 +134,10 @@ background: #85ACF7 url('../images/hidr.jpg');
 	
 .middle {
 	float: left;
-	width: 59%;
-	margin: 0 10px;
+	width: 60%;
+	margin: 0 0px;
 	padding: 1% 1%;
-	
+	border-right:1px solid #000;
 }
 .middle h1 {
 	line-height: 1.1em;
@@ -143,11 +150,10 @@ background: #85ACF7 url('../images/hidr.jpg');
 }
 
 .right {
-	float: left;
+	float: right;
 	width: 30%;
-	margin: 0 10px;
+	margin: 0 20px;
 	padding: 1% 1%;
-	
 }
 
 .right ul {
@@ -176,6 +182,11 @@ background: #85ACF7 url('../images/hidr.jpg');
 #footer {
 	text-align: center;
 	color: #666;
+	padding:2px;
+	background: #F6F9FB;
+	border-top: 1px solid #E1E1E1;
+	margin-top:2px;
+	padding: 0 40px 0 40px;
 }
 
 

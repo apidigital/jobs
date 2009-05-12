@@ -1,10 +1,13 @@
 class QuestionsController < ApplicationController
-layout 'layout'
 skip_before_filter :admin_check, :only => [:index, :show]
 before_filter :login_check, :only => [ :index, :new ]
 #This after filter will remove the flash notice when it is displayed
 #on the index page after you go to another page so it won't hang around.
-after_filter :destroy_notice, :only => [ :index ]
+######
+# 5/12/09 [Randall Brewer]: The follow after_filter is causing the notice
+# to appear rather than disappear. Commented out to fix layout glitch.
+######
+# after_filter :destroy_notice, :only => [ :index ]
   # GET /questions
   # GET /questions.xml
   def index

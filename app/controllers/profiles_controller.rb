@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:index, :show, :create, :update]
   # GET /profiles
   # GET /profiles.xml

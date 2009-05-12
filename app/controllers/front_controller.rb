@@ -1,5 +1,4 @@
 class FrontController < ApplicationController
-layout 'layout'
 skip_before_filter :admin_check, :only => [:index]
   def index
     #@positions = Position.find(:all)

@@ -1,0 +1,8 @@
+<div class="question">
+<% fields_for_question(question) do |question_form| -%>
+	<p>
+		Question: <%= question_form.text_field :content %>
+		<%= link_to_function "remove", "$(this).up('.question').remove()" %>
+	</p>
+<% end -%>
+</div>

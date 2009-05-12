@@ -1,5 +1,4 @@
 class ResumesController < ApplicationController
-  layout 'layout'
   skip_before_filter :admin_check, :only => [:index, :create]
   # GET /resumes
   # GET /resumes.xml

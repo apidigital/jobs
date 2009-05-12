@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+  	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  	<title>Jobs at API Digital</title>
+  	<%= stylesheet_link_tag 'scaffold' %>
+  	<%= stylesheet_link_tag 'custom' %>
+  	<%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag 'redbox' %>
+		<%= javascript_include_tag 'redbox' %>
+		<%= calendar_date_select_includes %>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="top"></div>
+			<div id="content">
+				<div class="header">
+					<h1 align="center"><a href="/">API Digital</a></h1>
+					<h2 align="center">Jobs</h2>
+				</div>
+				<div class="breadcrumbs">
+					<div style="width: 400px; float: right; text-align:right ">
+						<% form_tag "/search" do %>
+							<%= text_field_tag :query %>
+							<%= submit_tag "Search Jobs"%>
+						<% end %>
+					</div>
+					<div style="width: 200px; float: left">
+						<% if logged_in? %>
+							<span>
+								Welcome <%= current_user.profile.firstname %>! | 
+								<%= link_to "Profile", {:controller => "profiles", :action => "index"} %> | 
+								<%= link_to "Logout", logout_url %> 
+							</span>
+						<% else %>
+							<span>
+							  <%= link_to "Login", login_url %> | 
+								<%= link_to "Register", signup_url %>
+							</span>
+						<% end %>
+					</div>
+				</div>
+				<% flash.each do |key, msg| %>
+					<%= link_to_function msg, "Effect.SwitchOff('flash_#{key}'); return false;", :class => "notices", :id => "flash_#{key}", :title => "Click to close." %>
+				<% end %>
+				<div class="spacer"></div>
+				<div class="middle">
+					<%= yield %>
+				</div>
+				<div class="right">
+					<h2>Navigation</h2>
+						<%= sidebar(@sidebar_categories, :link => lambda {|category| category_path(category) }, :after_link => lambda{|category| category.active_positions_count} ) if @sidebar_categories %>
+					<%= render :partial => 'shared/administration' if current_user && current_user.profile.admin? %>
+				</div>
+				<div id="clear"></div>
+				<div id="footer">
+					<%= yield(:bottom) || render(:partial => 'shared/footer') %>
+				</div>
+			</div>
+			<div id="bottom"></div>
+		</div>
+	</body>
+</html>
