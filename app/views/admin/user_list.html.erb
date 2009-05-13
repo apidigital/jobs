@@ -1,20 +1,29 @@
-<h1>User List</h1><br />
-<ul>
-<% for applicant in User.applicants %>
-	<% if applicant.profile %>
-		<li>
-			<%= link_to "#{applicant.profile.firstname} #{applicant.profile.lastname}", profile_path(applicant.profile) %> <%= link_to "[Edit]", edit_profile_path(applicant.profile)%>
-			<%= link_to "(Pending Application)", submission_path(applicant.submissions.find(:first)) if applicant.pending_application? %>
-		</li>
+<h1>Users</h1><br />
+<table width="100%" class="sortable">
+<tr>
+	<th></td>
+	<th class="subheader"><h2><center>Login</center></h2></td>
+	<th class="subheader"><h2><center>Last Name</center></h2></td>
+	<th class="subheader"><h2><center>First Name</center></h2></td>
+	<th class="subheader" colspan="2"><h2>Resume</center></h2></td>
+</tr>
+<% for users in @users %>
+	<% if users.profile.admin %>
+	<tr class="admin">
+	<% else %>
+	<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
 	<% end %>
+		<td><%= link_to image_tag("../../images/Crystal_Clear_action_edit.png", :size => "20x20", :alt => "View submission"), edit_profile_path(users.profile), :class => "subtable", :style => "cursor:auto;" %></td>
+		<td><%= link_to users.login, :class => "subtable" %></td>
+		<td><%= link_to users.profile.lastname, profile_path(users.profile), :class => "subtable" %></td>
+		<td><%= link_to users.profile.firstname, profile_path(users.profile), :class => "subtable" %></td>
+		<% if users.resume %>
+			<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(users.resume)}, :class => "subtable") %></center></td> 
+			<td><center><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), users.resume.public_filename, :class => "subtable" %></center></td>
+		<% else %>
+			<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
+		<% end %>
+		</td>
+	</tr>
 <% end %>
-</ul>
-<h1>Administrators</h1>
-<ul>
-	<% for admin in User.administrators %>
-		<li>
-			<%= link_to admin.login, edit_profile_path(admin.profile) %>
-			<%= link_to "(Pending Application)", submission_path(admin.submissions.find(:first)) if admin.pending_application? %>
-		</li>
-	<% end %>
-</ul>
+</table>

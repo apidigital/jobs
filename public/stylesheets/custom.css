@@ -202,29 +202,14 @@ a.subtable {
 	cursor:default;
 }
 
-/*a.subtablemag {
-	background:url('../images/Crystal_Clear_action_viewmag.png');
-}*/
-
 a.subtable:hover {
 	display: block;
 	background:none;
 	cursor:default;
 }
 
-tr.normal {
-	background: #c2dc72;
-	padding:2px;
-}
-
 tr.normal td {
 	background: #c2dc72;
-	border: 1px solid #1A8105;
-	padding:2px;
-}
-
-tr.highlight {
-	background: #d1ee7a;
 	border: 1px solid #1A8105;
 	padding:2px;
 }
@@ -235,11 +220,19 @@ tr.highlight td {
 	padding:2px;
 }
 
-td.subheader {
+th.subheader {
 	border:1px solid black;
 	border-bottom:none;
+	cursor:s-resize;
 }
 
 td.subheader h2 {
 	margin:2px;
+}
+
+tr.admin td {
+	background: #ffc84e;
+	border: 1px solid #c1983b;
+	padding: 2px;
+	cursor: auto;
 }

@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   end
   
   def user_list
-    @profiles = Profile.find(:all)
+    @users = User.find(:all)
   end
 
   def positions
