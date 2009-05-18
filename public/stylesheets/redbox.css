@@ -15,17 +15,24 @@
 
 #RB_redbox {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0px;
 }
 
 #RB_window {
-	position:relative;
-	width: 850px;
+	position:fixed;
+	width:80%;
+	top: 150px;
+	left: 125px;
+	right: 125px;
 	margin-left:auto;
 	margin-right:auto;
 	border:1px solid black;
-  	z-index:102;
+  z-index:102;
+  bottom:100px;
+  overflow: auto;
+  overflow-x: hidden;
+  background:white;
 }
 
 #RB_loading {

@@ -58,7 +58,7 @@ class SubmissionsController < ApplicationController
   # PUT /submissions/1.xml
   def update
     @submission = Submission.find(params[:id])
-
+    @submission.consider_for_interview = true
     respond_to do |format|
       if @submission.update_attributes(params[:submission])
         flash[:notice] = 'Submission was successfully updated.'
@@ -100,4 +100,20 @@ class SubmissionsController < ApplicationController
     render :layout => false
   end
   
+#	 	def approve_for_interview
+#     @submission = Submission.find(params[:id])
+#     @submission.consider_for_interview = true
+#     @submission.save!
+#   end
+  
+  def deny_for_interview
+    @submission = Submission.find(params[:id])
+    @submission.consider_for_interview = false
+    @submission.save!
+  end
+  
+  def appointment
+  	@submission = Submission.find(params[:id])
+  	render :partial => "appointment", :object => @submission
+  end
 end

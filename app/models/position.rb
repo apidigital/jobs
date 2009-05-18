@@ -5,7 +5,7 @@ class Position < ActiveRecord::Base
   belongs_to :category
   named_scope :active, :conditions => { :active => true }
   after_update :save_questions
-  validates_associated :questions
+#  validates_associated :questions
   
   def new_question_attributes=(question_attributes)
   	question_attributes.each do |attributes|

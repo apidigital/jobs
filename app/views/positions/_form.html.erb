@@ -11,9 +11,7 @@
     <%= f.text_area :description %>
   </p>
   <p>Category: 
-	<%= f.collection_select(:category_id, @categories, :id, :name) %>
-		<%#= f.label :category_id %><br />
-    <%#= f.text_field :category_id %>
+  	<%= f.collection_select(:category_id, @categories, :id, :name) %>
   </p>
 	<p><label for="active">Active?:</label>
 <%= f.check_box 'active' %></p>

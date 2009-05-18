@@ -2,9 +2,10 @@
 	<br />
 	<%= textilize @position.description.gsub(/\s\s/, '<br />') %>
 <% end %>
+<br />
 <p>
 	<%#= Need to write something here to check and see if the user has applied! %>
-	<%= link_to 'Apply Now!', position_questions_path(@position) %>
+	<center><%= link_to image_tag("../../images/applynow.png", :title => "Apply!"), position_questions_path(@position) %></center>
 </p>
 <%# This needs to be hidden from users who do not have permissions to edit information. %>
 <%#= link_to 'Edit', edit_position_path(@position) %>

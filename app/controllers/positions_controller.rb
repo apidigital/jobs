@@ -49,6 +49,7 @@ class PositionsController < ApplicationController
   # POST /positions.xml
   def create
     @position = Position.new(params[:position])
+    @categories = Category.find(:all)
 
     respond_to do |format|
       if @position.save

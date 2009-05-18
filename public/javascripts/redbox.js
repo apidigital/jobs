@@ -37,7 +37,7 @@ var RedBox = {
 
   showOverlay: function()
   {
-    var inside_redbox = '<div id="RB_window" style="display: none;"><div id="RB_loading"></div></div><div id="RB_overlay" style="display: none;"></div>'
+    var inside_redbox = '<div id="RB_window" style="display: none;" align="center"><div id="RB_loading"></div></div><div id="RB_overlay" style="display: none;"></div>'
     if ($('RB_redbox'))
     {
       Element.update('RB_redbox', "");

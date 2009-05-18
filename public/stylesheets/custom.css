@@ -3,18 +3,25 @@
     margin: 0;
 } 
 
+image {
+	border:hidden;
+}
+
 body {
     background: #fff;
 	font: .74em "Trebuchet MS" Verdana, Arial, sans-serif;
 	line-height: 1.5em; 
 }
+
 a {
 	color: #3B6EBF;
 	text-decoration: none;
 }
 
 a:hover {
+	color: #3B6EBF;
 	text-decoration: underline;
+	background:none;
 }
 
 .info {
@@ -78,7 +85,6 @@ padding: 0 40px 0 40px;
 }
 
 #bottom {
-
 height: 30px;
 }
 
@@ -86,6 +92,8 @@ height: 30px;
 .header {
 height: 100px;
 background: #85ACF7 url('../images/hidr.jpg');
+border:1px solid #E1E1E1;
+border-bottom:none;
 }
 
 .header h1 { padding-left: 17px; padding-top: 22px; font-size: 22px; color: #FFF; }
@@ -93,8 +101,9 @@ background: #85ACF7 url('../images/hidr.jpg');
 .header h2 { padding-left: 17px; padding-top: 0px; font-size: 17px; color: #FFF; }
 
 .breadcrumbs { 
-    background: #F6F9FB; 
-	border-bottom: 1px solid #E1E1E1; 
+ background: #F6F9FB; 
+	border: 1px solid #E1E1E1; 
+	border-top:none;
 	padding: 5px;
 	min-height: 20px;
 }
@@ -141,7 +150,7 @@ a.errors {
 	
 .middle {
 	float: left;
-	width: 60%;
+	width: 77%;
 	margin: 0 0px;
 	padding: 1% 1%;
 	border-right:1px solid #000;
@@ -158,19 +167,19 @@ a.errors {
 
 .right {
 	float: right;
-	width: 30%;
-	margin: 0 20px;
+	width: 17%;
+	/*margin: 0 20px;*/
 	padding: 1% 1%;
 }
 
 .right ul {
-	padding: 20px 0 15px 20px;
+	/*padding: 20px 0 15px 20px;*/
 	margin:0;
 }
 
 .right li {
 	margin-bottom:5px;
-	list-style-type: square;
+	/*list-style-type: square;*/
 	color: #3B6EBF;
 }
 
@@ -191,7 +200,7 @@ a.errors {
 	color: #666;
 	padding:2px;
 	background: #F6F9FB;
-	border-top: 1px solid #E1E1E1;
+	border: 1px solid #E1E1E1;
 	margin-top:2px;
 	padding: 0 40px 0 40px;
 }
@@ -226,8 +235,14 @@ th.subheader {
 	cursor:s-resize;
 }
 
+th.subheaderclean {
+	border:1px solid black;
+	border-bottom:none;
+}
+
 td.subheader h2 {
 	margin:2px;
+	text-align:center;
 }
 
 tr.admin td {
@@ -235,4 +250,27 @@ tr.admin td {
 	border: 1px solid #c1983b;
 	padding: 2px;
 	cursor: auto;
+}
+
+li.q {
+	display:block;
+	background-color:#F5F5F5;
+	border:1px solid #EBEBEB;
+	margin-bottom:4px;
+	padding:4px;
+	margin-right:14px;
+}
+
+li.a {
+	display:block;
+	background-color: #fff9d8;
+	/*border:1px solid #e9e59a;*/
+	border:1px solid #F5F0CF;
+	padding:4px;
+	margin-left:14px;
+}
+
+li.asdf {
+	display:block;
+	/*background-color:#6EB0E9;*/
 }

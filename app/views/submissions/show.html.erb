@@ -9,22 +9,33 @@
 	<% end -%>)
 </h2>
 
+<%= link_to_function("Hide Questionnaire", nil, :id => "hide") do |page|
+			page.visual_effect(:BlindUp, "questionnaire")
+			page.hide("hide")
+			page.show(:show)
+		end
+%>
+<%= link_to_function("Show Questionnaire", nil, :id => "show", :style => "display:none;") do |page|
+			page.visual_effect(:BlindDown, "questionnaire")
+			page.hide("show")
+			page.show(:hide)
+		end
+%>
 <div id="questionnaire">
 	<% for question in @submission.position.questions %>
 	<ul>
-		<li>Q: <%= question.content %></li>
-		<li>A: 
+		<li class="q">Q: <%= question.content %></li>
+		<li class="a">A: 
 			<% if question.answers.find_by_user_id(@submission.user_id) %>
-			<%= question.answers.find_by_user_id(@submission.user_id).content %>
+				<%= question.answers.find_by_user_id(@submission.user_id).content %>
 			<% else %>
-			N/A.
+				N/A.
 			<% end %>
 		</li>
 	</ul><br />
 	<% end %>
 </div>
 
-<%= link_to_function("Show/Hide Questionnaire", " Effect.toggle('questionnaire', 'slide')") %>
 <div id="saved">
 	<% unless @submission.checked_on? %>
 		<%= link_to_remote "Mark Viewed.", :url => {:action => :mark, :id => @submission}  %>

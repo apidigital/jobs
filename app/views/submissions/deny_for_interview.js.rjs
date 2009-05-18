@@ -1,0 +1,7 @@
+page.replace_html "status#{@submission.id}", "Denied"
+page.if page["deny_#{@submission.id}"] do
+	page.remove "deny_#{@submission.id}"
+	page.replace "accept_#{@submission.id}", "<td colspan='2' id='accept_#{@submission.id}' align='center'>#{link_to_remote_redbox(image_tag('../../images/Crystal_Clear_action_apply.png', :size => '20x20', :title => 'Approve submission'), link_to_remote_options = {:url => {:controller => 'submissions', :action => :appointment, :id => @submission.id}}, :class => 'subtable')}</td>"
+page.else
+	page.replace "accept_#{@submission.id}", "<td colspan='2' id='accept_#{@submission.id}' align='center'>#{link_to_remote_redbox(image_tag('../../images/Crystal_Clear_action_apply.png', :size => '20x20', :title => 'Approve submission'), link_to_remote_options = {:url => {:controller => 'submissions', :action => :appointment, :id => @submission.id}}, :class => 'subtable')}</td>"
+end
