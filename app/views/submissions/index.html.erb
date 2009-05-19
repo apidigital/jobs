@@ -6,8 +6,8 @@
 	<th class="subheader"><h2>Position</h2></th>
 	<th class="subheader"><h2>Date</h2></th>
 	<th class="subheader" colspan="2"><h2>Resum&#233</h2></th>
-	<th class="subheaderclean" colspan="2"><h2>Accept/ Deny</h2></th>
-	<th class="subheader"><h2>Status</h2></th>
+	<th class="subheader" colspan="2"><h2>Status</h2></th>
+	<th></th>
 </tr>
 <% for submissions in @submissions %>
 <tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
@@ -17,34 +17,27 @@
 	<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>" nowrap><%= submissions.created_at.to_s(:short) %></td>
 	
 	<% if submissions.user.resume %>
-		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume)}, :class => "subtable") %></td> 
+		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume)}, :class => "subtable", :align => "left") %></td> 
 		<td><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), submissions.user.resume.public_filename, :class => "subtable" %></td>
-			<% else %>
+	<% else %>
 		<td colspan="2" align="center"><%= link_to 'N/A', "#", :class => "subtable" %></td>
 	<% end %>
 	
 	<% if submissions.consider_for_interview == true %>
-		<td colspan="2" align="center" id="accept_<%= submissions.id %>">
-<!--  			<div id="acceptdeny<%= submissions.id %>"> -->
-				<%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %>
- <!-- 			</div> -->
-		</td>
-		<td id="status<%= submissions.id %>" align="center">Approved</td>
+		<td id="status<%= submissions.id %>" align="center" colspan="2">Approved</td>
+		<td id="accept_<%= submissions.id %>" align="center"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %></td>
 	<% end %>
 	
 	<% if submissions.consider_for_interview == false %>
-		<td colspan="2" align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
-		<td id="status<%= submissions.id %>" align="center">Denied</td>
+		<td id="status<%= submissions.id %>" align="center" colspan="2">Denied</td>
+		<td align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
 	<% end %>
 	
 	<% if submissions.consider_for_interview == nil %>
-		<!-- <div id="acceptdeny<%= submissions.id %>"> -->
 			<td align="center" id="accept_<%= submissions.id %>"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
 			<td align="center" id="deny_<%= submissions.id %>"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable" } %></td>
-		<!-- </div> -->
-		<td id="status<%= submissions.id %>" align="center">Pending</td>
-	<% end %>
-	
+			<td align="center" id="change_<%= submissions.id %>" style="display:none;"></td>
+	<% end %>	
 </tr>
 <% end %>
 </table>

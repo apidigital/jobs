@@ -31,8 +31,7 @@
 					<div style="width: 200px; float: left">
 						<% if logged_in? %>
 							<span>
-								Welcome <%= current_user.profile.firstname %>! | 
-								<%= link_to "Profile", {:controller => "profiles", :action => "index"} %> | 
+								Welcome <%= link_to current_user.profile.firstname, {:controller => "profiles", :action => "index"} %>! | 
 								<%= link_to "Logout", logout_url %> 
 							</span>
 						<% else %>

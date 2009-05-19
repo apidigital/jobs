@@ -2,7 +2,7 @@
 
 <% for position in @positions %>
 	<% render :layout => 'positions/position', :object => position do %>
-		<%= textilize truncate(position.description, 300) %>
+		<%= textilize truncate(position.description, :length => 300) %>
 	<% end %>
 <% end %>
 

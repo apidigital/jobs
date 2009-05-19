@@ -27,7 +27,7 @@
 		<li class="q">Q: <%= question.content %></li>
 		<li class="a">A: 
 			<% if question.answers.find_by_user_id(@submission.user_id) %>
-				<%= question.answers.find_by_user_id(@submission.user_id).content %>
+				<%= textilize question.answers.find_by_user_id(@submission.user_id).content.gsub(/\s\s/, '<br />') %>
 			<% else %>
 				N/A.
 			<% end %>
