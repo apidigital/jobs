@@ -31,8 +31,8 @@
 					<div style="width: 200px; float: left">
 						<% if logged_in? %>
 							<span>
-								Welcome <%= link_to current_user.profile.firstname, {:controller => "profiles", :action => "index"} %>! | 
-								<%= link_to "Logout", logout_url %> 
+								Welcome <%= link_to current_user.profile.firstname, {:controller => "profiles", :action => "index"} %>! 
+								<%= link_to "(Logout)", logout_url %> 
 							</span>
 						<% else %>
 							<span>
@@ -50,7 +50,7 @@
 					<%= yield %>
 				</div>
 				<div class="right">
-					<h2>Navigation</h2>
+					<h2>Categories</h2>
 						<%= sidebar(@sidebar_categories, :link => lambda {|category| category_path(category) }, :after_link => lambda{|category| category.active_positions_count} ) if @sidebar_categories %>
 					<%= render :partial => 'shared/administration' if current_user && current_user.profile.admin? %>
 				</div>

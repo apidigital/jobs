@@ -4,7 +4,7 @@
 <h2>Current Positions</h2>
 <% for position in @positions %>
 	<% render :layout => 'positions/position', :object => position do %>
-		<%= textilize truncate(position.description, 300)%>
+		<%= textilize truncate(position.description, :length => 300)%>
 	<% end %>
 <% end %>
 <%#= link_to 'Edit', edit_category_path(@category) %>
