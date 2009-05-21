@@ -10,7 +10,6 @@ img {
 body {
   background: #fff;
 	font: .74em "Trebuchet MS" Verdana, Arial, sans-serif;
-	line-height: 1.5em; 
 }
 
 a {
@@ -73,7 +72,8 @@ a:hover {
 
 #wrap {
 	margin: 20px auto;
-	width: 924px;
+	width: 90%;
+	min-width: 960px;
 	background: #fff 
 }
 
@@ -168,9 +168,9 @@ a.errors {
 	
 .middle {
 	float: left;
-	width: 77%;
-/* 	margin: 0 0px; */
+	width: 80%;
 	padding: 1% 1%;
+	padding-right:0px;
 }
 .middle h1 {
 	line-height: 1.1em;
@@ -185,6 +185,7 @@ a.errors {
 .right {
 	float: right;
 	width: 17%;
+	max-width: 140px;
 	padding: 1% 1%;
 	border-left:1px solid #E1E1E1;
 	border-right:1px solid #E1E1E1;
@@ -319,4 +320,33 @@ li.asdf {
 
 #holder {
 	display:block;
+}
+
+#registration_login {
+	display:block;
+	padding:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+/*
+	background-color: #fff9d8;
+	border:1px solid #F5F0CF;
+*/
+	background-color: #fdfdfd;
+	border:1px solid #000000;
+	float:left;
+	width:49%;
+}
+
+#registration_register {
+	display:block;
+	padding:5px;
+/*
+	background-color: #fff9d8;
+	border:1px solid #F5F0CF;
+*/
+	background-color: #fdfdfd;
+	border:1px solid #000000;
+	float:right;
+	width:47%;
+	margin-left:2px;
 }

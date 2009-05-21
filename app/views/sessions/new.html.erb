@@ -1,19 +1,117 @@
+<!--
 <div class="signup">
 	<%= link_to "Don't have an account? Please register!", signup_url %>
 </div>
-<% form_tag session_path do -%>
-<p><label for="login">Login</label><br/>
-<%= text_field_tag 'login' %></p>
+-->
+<div id="registration_login">
+	<h1 align="center">Log In</h1><br />
+		<div class="field">
+			<% form_tag session_path do -%>
+				<label for="login">Login:</label>
+			<%= text_field_tag 'login' %>
+		</div>
+		<br />
+		<div class="field">
+			<label for="password">Password:</label>
+			<%= password_field_tag 'password' %>
+		</div>
+		<br />
+		<div class="field">
+			<label for="remember_me">Remember me:</label>
+			<%= check_box_tag 'remember_me' %>
+		</div>
+		<br />
+		<div class="field">
+		<label></label>
+		<%= link_to "Forgot Password?", :controller => "forgotten", :action => "reset" %>
+		</div>
+		<br />
+		<div class="field">
+		<label></label>
+		<%= submit_tag 'Log in' %>
+		</div>
+		<% end -%>
+</div>
 
-<p><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></p>
-
-
-<p><label for="remember_me">Remember me:</label>
-<%= check_box_tag 'remember_me' %></p>
-
-
-<%= link_to "Forgot Password?", :controller => "forgotten", :action => "reset" %>
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>
+<div id="registration_register">
+	<h1 align="center">Register</h1>
+		<%= error_messages_for :user %>
+			
+			<div class="notices yellow">
+				<span>Fields marked with a * are required.</span>
+			</div>
+			<div class="field">
+				<% form_for :user, :url => users_path do |f| -%>
+				<label for="login">* Login:</label>
+				<%= f.text_field :login %>
+			</div>
+			<br />
+			<div class="field">
+				<label for="email">* Email</label>
+				<%= f.text_field :email %>
+			</div>
+			<br />
+			<div class="field">
+				<label for="password">* Password</label>
+				<%= f.password_field :password %>
+			</div>
+			<br />
+			<div class="field">
+				<label for="password_confirmation">* Confirm Password</label>
+				<%= f.password_field :password_confirmation %>
+			</div>
+			<br /><br />
+			<%= error_messages_for :profile %>
+			<% fields_for :profile do |profile| %>
+				<div class="field">
+					<label for="firstname">* First Name</label>
+					<%= profile.text_field :firstname %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="lastname">* Last Name</label>
+					<%= profile.text_field :lastname %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="address1">* Address 1</label>
+					<%= profile.text_field :address1 %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="address2">Address 2</label>
+					<%= profile.text_field :address2 %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="city">* City</label>
+					<%= profile.text_field :city %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="state">* State</label>
+					<%= profile.text_field :state %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="zip">* Zip</label>
+					<%= profile.text_field :zip %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="dayphone">Daytime Phone</label>
+					<%= profile.text_field :dayphone %>
+				</div>
+				<br />
+				<div class="field">
+					<label for="eveningphone">Evening Phone</label>
+					<%= profile.text_field :eveningphone %>
+				</div>
+			<% end %>
+			<br />
+			<div class="field">
+				<label></label>
+				<%= submit_tag 'Sign up' %>
+			</div>
+			<% end -%>
+</div>

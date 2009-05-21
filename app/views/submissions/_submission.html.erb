@@ -1,0 +1,75 @@
+<%= link_to_close_redbox("Close") %>
+<h1>Application for "<%= submission.position.name %>"</h1><br />
+<h2>
+	Submitted by:  
+	<%= link_to "#{submission.user.profile.firstname} #{submission.user.profile.lastname}", profile_path(submission.user.profile) %> 
+	( <% if submission.user.resume -%> 
+		<%= link_to submission.user.resume.filename, submission.user.resume.public_filename -%> 
+	<% else -%> 
+		No Resume 
+	<% end -%>)
+</h2>
+
+<%= link_to_function(image_tag("../../images/hide.png", :title => "Hide"), nil, :id => "hide") do |page|
+			page.visual_effect(:BlindUp, "questionnaire")
+			page.hide("hide")
+			page.show(:show)
+		end
+%>
+<%= link_to_function(image_tag("../../images/show.png", :title => "Show"), nil, :id => "show", :style => "display:none;") do |page|
+			page.visual_effect(:BlindDown, "questionnaire")
+			page.hide("show")
+			page.show(:hide)
+		end
+%>
+<% unless submission.checked_on? %>
+	<%= link_to_remote image_tag("../../images/viewed.png", :title => "Mark as viewed"), :url => {:action => :mark, :id => submission}, :html => {:id => "viewed"}  %>
+<% else %>
+	<%= link_to_remote image_tag("../../images/unviewed.png", :title => "Mark as unviewed"), :url => {:action => :mark, :id => submission}, :html => {:id => "unviewed"}  %>	
+<% end %>
+<br />
+<div id="questionnaire">
+	<% for question in submission.position.questions %>
+	<ul>
+		<li class="q">Q: <%= question.content %></li>
+		<li class="a"><% if question.answers.find_by_user_id(submission.user_id) %>
+				<%= textilize "A: "+question.answers.find_by_user_id(submission.user_id).content.gsub(/\s\s/, '<br />') %>
+			<% else %>
+				N/A.
+			<% end %>
+		</li>
+	</ul><br />
+	<% end %>
+</div>
+<% if submission.interview_scheduled == nil %>
+	<div id="approvedeny<%= submission.id %>">
+		<% if submission.consider_for_interview == nil %>
+			<%= link_to_remote "Approve", :url => {:controller => "resource_management", :action => :approve_for_interview, :id => submission} %>/
+			<%= link_to_remote "Deny", :url => {:controller => "resource_management", :action => :deny_for_interview, :id => submission} %>
+		<% elsif submission.consider_for_interview == true %>
+			<span>Application is Approved, would you like to <%= link_to_remote "Deny", :url => {:controller => "resource_management", :action => :deny_for_interview, :id => submission} %>?</span><br />
+			<span>An interview still needs to be scheduled. 
+			<% form_for submission do |f| %>
+				<%= f.calendar_date_select :interview_scheduled %>
+				<%= f.submit "Schedule"%>
+			<% end %></span>
+		<% elsif submission.consider_for_interview == false %>
+			<span>Application is Denied, would you like to <%= link_to_remote "Approve", :url => {:controller => "resource_management", :action => :approve_for_interview, :id => submission} %>?</span>
+		<% end %>
+	</div>
+<% else %>
+	<span>Interview is scheduled for <%= submission.interview_scheduled.to_s(:long) %>.</span><br />
+	<% form_for(submission) do |f| %>
+	<%= f.hidden_field :interview_scheduled, :value => "" %>
+	<%= f.submit "Clear Interview" %>
+	<% end %>
+	<% if submission.conflicts.empty? %>	
+		<h3>Possible Conflicts</h3>
+		<% for submission in submission.conflicts %>
+			<% if submission != submission %>
+				<span><%= link_to "Interview", submission_path(submission)%> scheduled with <%= link_to "#{submission.user.profile.firstname} #{submission.user.profile.lastname}", profile_path(submission.user.profile) %> on <%= submission.interview_scheduled.to_s(:long) %>.</span><br />
+			<% end %>
+	  <% end %>
+	<% end %>
+<% end %>
+<%= link_to 'Back', submissions_path %>

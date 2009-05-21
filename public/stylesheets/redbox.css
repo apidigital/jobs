@@ -33,6 +33,8 @@
   overflow: auto;
   overflow-x: hidden;
   background:white;
+  text-align:left;
+  padding: 5px;
 }
 
 #RB_loading {

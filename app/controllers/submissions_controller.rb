@@ -16,6 +16,7 @@ class SubmissionsController < ApplicationController
   def show
     @submission = Submission.find(params[:id])
     respond_to do |format|
+    	format.js { render :partial => "submission", :object => @submission }
       format.html # show.html.erb
       format.xml  { render :xml => @submission }
     end
@@ -99,12 +100,6 @@ class SubmissionsController < ApplicationController
     end
     render :layout => false
   end
-  
-#	 	def approve_for_interview
-#     @submission = Submission.find(params[:id])
-#     @submission.consider_for_interview = true
-#     @submission.save!
-#   end
   
   def deny_for_interview
     @submission = Submission.find(params[:id])

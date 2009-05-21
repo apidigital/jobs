@@ -1,6 +1,6 @@
-<h1><%= @submission.position.name %></h1><br />
+<h1>Application for "<%= @submission.position.name %>"</h1><br />
 <h2>
-	Application for: 
+	Submitted by:  
 	<%= link_to "#{@submission.user.profile.firstname} #{@submission.user.profile.lastname}", profile_path(@submission.user.profile) %> 
 	( <% if @submission.user.resume -%> 
 		<%= link_to @submission.user.resume.filename, @submission.user.resume.public_filename -%> 
@@ -9,38 +9,35 @@
 	<% end -%>)
 </h2>
 
-<%= link_to_function("Hide Questionnaire", nil, :id => "hide") do |page|
+<%= link_to_function(image_tag("../../images/hide.png", :title => "Hide"), nil, :id => "hide") do |page|
 			page.visual_effect(:BlindUp, "questionnaire")
 			page.hide("hide")
 			page.show(:show)
 		end
 %>
-<%= link_to_function("Show Questionnaire", nil, :id => "show", :style => "display:none;") do |page|
+<%= link_to_function(image_tag("../../images/show.png", :title => "Show"), nil, :id => "show", :style => "display:none;") do |page|
 			page.visual_effect(:BlindDown, "questionnaire")
 			page.hide("show")
 			page.show(:hide)
 		end
 %>
+<% unless @submission.checked_on? %>
+	<%= link_to_remote image_tag("../../images/viewed.png", :title => "Mark as viewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "viewed"}  %>
+<% else %>
+	<%= link_to_remote image_tag("../../images/unviewed.png", :title => "Mark as unviewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "unviewed"}  %>	
+<% end %>
+<br />
 <div id="questionnaire">
 	<% for question in @submission.position.questions %>
 	<ul>
 		<li class="q">Q: <%= question.content %></li>
-		<li class="a">A: 
-			<% if question.answers.find_by_user_id(@submission.user_id) %>
-				<%= textilize question.answers.find_by_user_id(@submission.user_id).content.gsub(/\s\s/, '<br />') %>
+		<li class="a"><% if question.answers.find_by_user_id(@submission.user_id) %>
+				<%= textilize "A: "+question.answers.find_by_user_id(@submission.user_id).content.gsub(/\s\s/, '<br />') %>
 			<% else %>
 				N/A.
 			<% end %>
 		</li>
 	</ul><br />
-	<% end %>
-</div>
-
-<div id="saved">
-	<% unless @submission.checked_on? %>
-		<%= link_to_remote "Mark Viewed.", :url => {:action => :mark, :id => @submission}  %>
-	<% else %>
-		<%= link_to_remote "Unmark viewed.", :url => {:action => :mark, :id => @submission}  %>	
 	<% end %>
 </div>
 <% if @submission.interview_scheduled == nil %>
