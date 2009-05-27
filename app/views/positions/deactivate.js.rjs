@@ -1,0 +1,2 @@
+page.replace "deactivate_#{@position.id}", "#{link_to_remote image_tag('../../images/activate.png', :alt => 'Activate'), :url => {:controller => 'positions', :action => :activate, :id => @position}, :html => { :id => 'activate_' + @position.id.to_s}}"
+page << "$('poswrap_#{@position.id}').morph('background:#FFAEAE');"

@@ -15,15 +15,17 @@ class ResumesController < ApplicationController
   # GET /resumes/1.xml
   def show
     resume = Resume.find(params[:id])
-    case File.extname(RAILS_ROOT + "/public" + resume.public_filename)
-    when ".doc"
-      @resume = Antiword.new(RAILS_ROOT + "/public" + resume.public_filename).to_s 
-    when ".txt"
-      @resume = File.open(RAILS_ROOT + "/public" + resume.public_filename).readlines.to_s
-    when ".rtf"
-      @resume = Unrtf.new(RAILS_ROOT + "/public" + resume.public_filename).to_s
-    end
-    render :layout => false
+    # case File.extname(RAILS_ROOT + "/public" + resume.public_filename)
+#     when ".doc"
+#       @resume = Antiword.new(RAILS_ROOT + "/public" + resume.public_filename).to_s 
+#     when ".txt"
+#       @resume = File.open(RAILS_ROOT + "/public" + resume.public_filename).readlines.to_s
+#     when ".rtf"
+#       @resume = Unrtf.new(RAILS_ROOT + "/public" + resume.public_filename).to_s
+#     end
+    if params[:redbox]
+	    render :partial => "resume", :object => resume
+	  end
   end
 
   # GET /resumes/new

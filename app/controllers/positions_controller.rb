@@ -1,10 +1,15 @@
 class PositionsController < ApplicationController
-  skip_before_filter :admin_check, :only => [:index, :show]
+  skip_before_filter :admin_check, :only => [:show]
   # GET /positions
   # GET /positions.xml
   def index
-    @positions = current_user && current_user.admin? ? Position.find(:all) : Position.active
-
+  	@categories = Category.find(:all)
+    if params[:query]
+	    @positions = current_user && current_user.admin? ? Position.find(:all, :conditions => ["category_id = :query", {:query => params[:query]}]) : Position.active
+		else
+		  @positions = current_user && current_user.admin? ? Position.find(:all, :order => 'created_at DESC') : Position.active
+		end
+		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @positions }
@@ -91,5 +96,19 @@ class PositionsController < ApplicationController
       format.html { redirect_to(positions_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  # Custom content
+  
+  def deactivate
+  	@position = Position.find(params[:id])
+  	@position.active = false
+  	@position.save!
+  end
+  
+  def activate
+  	@position = Position.find(params[:id])
+  	@position.active = true
+  	@position.save!
   end
 end

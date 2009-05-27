@@ -1,8 +1,3 @@
-<!--
-<div class="signup">
-	<%= link_to "Don't have an account? Please register!", signup_url %>
-</div>
--->
 <div id="registration_login">
 	<h1 align="center">Log In</h1><br />
 		<div class="field">
@@ -35,7 +30,7 @@
 
 <div id="registration_register">
 	<h1 align="center">Register</h1>
-		<%= error_messages_for :user %>
+		<%= error_messages_for :user, :profile %>
 			
 			<div class="notices yellow">
 				<span>Fields marked with a * are required.</span>
@@ -61,7 +56,6 @@
 				<%= f.password_field :password_confirmation %>
 			</div>
 			<br /><br />
-			<%= error_messages_for :profile %>
 			<% fields_for :profile do |profile| %>
 				<div class="field">
 					<label for="firstname">* First Name</label>

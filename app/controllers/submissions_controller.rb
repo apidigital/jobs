@@ -3,8 +3,11 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
   def index
-    @submissions = Submission.find(:all)
-
+   	if params[:query] 
+   		@submissions = Submission.find(:all, :conditions => ["consider_for_interview = :query", {:query => params[:query]}])
+   	else
+    	@submissions = Submission.find(:all)
+ 		end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @submissions }

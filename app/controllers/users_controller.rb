@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!"
     else
-      render :action => 'new'
+      render :controller => "sessions", :action => 'new'
     end
   end
 

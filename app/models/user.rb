@@ -16,6 +16,12 @@ class User < ActiveRecord::Base
   validates_length_of       :login,    :within => 3..40
   validates_length_of       :email,    :within => 3..100
   validates_uniqueness_of   :login, :email, :case_sensitive => false
+  validates_presence_of :firstname
+  validates_presence_of :lastname
+  validates_presence_of :address1
+  validates_presence_of :city
+  validates_presence_of :state
+  validates_presence_of :zip
   before_save :encrypt_password
   
   # prevents a user from submitting a crafted form that bypasses activation

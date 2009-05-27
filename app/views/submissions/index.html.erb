@@ -17,7 +17,7 @@
 	<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>"><%= submissions.created_at.to_s(:short) %></td>
 	
 	<% if submissions.user.resume %>
-		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume)}, :class => "subtable") %></td> 
+		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume, :redbox => true)}, :class => "subtable") %></td>
 		<td><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), submissions.user.resume.public_filename, :class => "subtable" %></td>
 	<% else %>
 		<td colspan="2" align="center"><%= link_to 'N/A', "#", :class => "subtable" %></td>

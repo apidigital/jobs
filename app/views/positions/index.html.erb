@@ -1,17 +1,34 @@
-<% if params[:query] %>
-	<h1>Results for '<%= params[:query]%>'.</h1> 
-<% else %>
-	<h1> Current Positions </h1>
-<% end %>
-<% if current_user && current_user.admin? %>
-	<%= link_to '(New)', new_position_path %><br />
-<% end %>
-<ul>
-<% for position in @positions %>
-	<li><%= link_to position.name, position_path(position) %> [<%= link_to position.category.name, category_path(position.category.id) %>] 
-	<% if current_user && current_user.admin? %>
-		(<%= link_to 'Edit', edit_position_path(position) %>) (<%= link_to 'Destroy', position, :confirm => 'Are you sure?', :method => :delete %>)</li>
+<div class="categories">
+	<b>Category filter: <%= link_to '(clear)', positions_path %></b><br />
+	<% for category in @categories %>
+		<%= link_to category.name, :controller => "positions", :action => "index", :query => category.id %>, 
 	<% end %>
+</div>
+<% for position in @positions %>
+	<% if position.active? %>
+		<div class="poswrap" id="poswrap_<%= position.id %>">
+	<% else %>
+		<div class="poswrap" id="poswrap_<%= position.id %>" style="background-color:#FFAEAE;">
+	<% end %>
+		<div class="topline">
+			<div class="totheleft">
+				<%= link_to position.name, position_path(position) %><span style="font-size:16px;">/</span><%= link_to position.category.name, category_path(position.category) %>
+			</div>
+			<div class="totheright">
+			<%= link_to image_tag('../../images/view.png'), position_path(position) %>
+			<% if current_user && current_user.admin? %>
+				<%= link_to image_tag('../../images/edit.png'), edit_position_path(position) %>
+				<%= link_to image_tag('../../images/delete.png'), position, :confirm => 'Are you sure?', :method => :delete %>
+				<% if position.active? %>
+					<%= link_to_remote image_tag('../../images/deactivate.png', :alt => "Deactivate"), :url => {:controller => "positions", :action => :deactivate, :id => position}, :html => { :id => "deactivate_"+position.id.to_s} %>
+				<% else %>
+					<%= link_to_remote image_tag('../../images/activate.png', :alt => "Activate"), :url => {:controller => "positions", :action => :activate, :id => position}, :html => { :id => "activate_"+position.id.to_s} %>
+				<% end %>
+			<% end %>
+			</div>
+		</div><br />
+	<div class="describe"><%= textilize(truncate(position.description, :length => 300, :omission => link_to('...', position_path(position))))  %></div>
+</div>
+<br />
 <% end %>
-</ul>
 <br />

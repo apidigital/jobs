@@ -8,6 +8,8 @@
   right: 0;
   bottom: 0;
   min-height:100%;
+  padding-top:1px;
+  padding-bottom:1px;
   background-color: #000;
   opacity: .6;
   filter: alpha(opacity=60);
@@ -21,20 +23,54 @@
 
 #RB_window {
 	position:fixed;
-	width:80%;
+	width:724px;
 	top: 150px;
 	left: 125px;
 	right: 125px;
 	margin-left:auto;
 	margin-right:auto;
-	border:1px solid black;
   z-index:102;
   bottom:100px;
-  overflow: auto;
-  overflow-x: hidden;
-  background:white;
   text-align:left;
-  padding: 5px;
+}
+
+#RB_window div.top {
+	background-image: url('../images/topbg.png');
+	display:block;
+	height:30px;
+	width:724px;
+	background-repeat: no-repeat;
+	padding-top:10px;
+	margin-bottom:-10px;
+}
+
+#RB_window div.bottom {
+	background-image: url('../images/botbg.png');
+	display:block;
+	height:30px;
+	width:724px;
+	bottom:0px;
+	background-repeat: no-repeat;
+	padding-top:3px;
+}
+
+#RB_window pre.rescont {
+	width:724px;
+	padding-left:20px;
+	background-image: url('../images/midbg.png');
+	height:350px;
+	overflow: scroll;
+	overflow-x: hidden;
+	background-repeat: repeat-y;
+}
+
+#RB_window div.application {
+	width:724px;
+	height:350px;
+	background-color:#fff;
+	border:1px solid black;
+	overflow: scroll;
+	overflow-x:hidden;
 }
 
 #RB_loading {

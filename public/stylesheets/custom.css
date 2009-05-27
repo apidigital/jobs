@@ -92,7 +92,7 @@ a:hover {
 
 .header {
 	height: 100px;
-	background: #85ACF7 url('../images/hidr.jpg');
+	background: #85ACF7;
 	border:1px solid #E1E1E1;
 	border-bottom:none;
 }
@@ -302,6 +302,48 @@ li.asdf {
 	padding-left:10px;
 }
 
+div.topline {
+	display:block;
+	border-bottom:1px solid #F9F9F9;
+	padding:5px;
+	font-size: 13px;
+	height: 30px;
+}
+
+div.topline a {
+	color: #3B6EBF;
+	font-size: 16px;
+}
+
+div.describe {
+	display:block;
+	padding:5px;
+}
+
+div.poswrap {
+	display:block;
+	border:1px solid #F9F9F9;
+}
+
+div.categories {
+	background-color:#F6F9FB;
+	border:1px solid #E1E1E1;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+div.totheright {
+	float:right;
+	display:block;
+	padding:5px;
+}
+
+div.totheleft {
+	float:left;
+	display:block;
+	padding:5px;
+}
+
 #bottombuttonsleft {
 	border-top:1px solid #F9F9F9;
 	border-right:1px solid #F9F9F9;
@@ -327,10 +369,6 @@ li.asdf {
 	padding:5px;
 	padding-top:10px;
 	padding-bottom:10px;
-/*
-	background-color: #fff9d8;
-	border:1px solid #F5F0CF;
-*/
 	background-color: #fdfdfd;
 	border:1px solid #000000;
 	float:left;
@@ -340,10 +378,6 @@ li.asdf {
 #registration_register {
 	display:block;
 	padding:5px;
-/*
-	background-color: #fff9d8;
-	border:1px solid #F5F0CF;
-*/
 	background-color: #fdfdfd;
 	border:1px solid #000000;
 	float:right;

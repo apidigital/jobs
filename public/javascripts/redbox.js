@@ -17,7 +17,7 @@ var RedBox = {
 
   addHiddenContent: function(id)
   {
-    this.removeChildrenFromNode($('RB_window'));
+/*     this.removeChildrenFromNode($('RB_window')); */
     this.moveChildren($(id), $('RB_window'));
     this.activateRBWindow();
   },
@@ -37,7 +37,8 @@ var RedBox = {
 
   showOverlay: function()
   {
-    var inside_redbox = '<div id="RB_window" style="display: none;" align="center"><div id="RB_loading"></div></div><div id="RB_overlay" style="display: none;"></div>'
+/*     var inside_redbox = '<div id="RB_window" style="display: none;" align="center"><div id="RB_loading"></div></div><div id="RB_overlay" style="display: none;"></div>' */
+		var inside_redbox = '<div id="RB_window" style="display: none;" align="center"><div id="RB_loading"></div></div><div id="RB_overlay" style="display: none;"></div>'
     if ($('RB_redbox'))
     {
       Element.update('RB_redbox', "");
@@ -102,7 +103,7 @@ var RedBox = {
   	} else if (document.documentElement && document.documentElement.scrollTop){	 // Explorer 6 Strict
   		yScroll = document.documentElement.scrollTop;
   		xScroll = document.documentElement.scrollLeft;
-  	} else if (document.body) {// all other Explorers
+  	} else if (document.body) { // all other Explorers
   		yScroll = document.body.scrollTop;
   		xScroll = document.body.scrollLeft;	
   	}

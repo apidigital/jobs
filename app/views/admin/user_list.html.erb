@@ -1,11 +1,11 @@
 <h1>Users</h1><br />
 <table width="100%" class="sortable">
 <tr>
-	<th></td>
-	<th class="subheader"><h2><center>Login</center></h2></td>
-	<th class="subheader"><h2><center>Last Name</center></h2></td>
-	<th class="subheader"><h2><center>First Name</center></h2></td>
-	<th class="subheader" colspan="2"><h2>Resume</center></h2></td>
+	<th></th>
+	<th class="subheader" align="center"><h2>Login</h2></th>
+	<th class="subheader" align="center"><h2>Last Name</h2></th>
+	<th class="subheader" align="center"><h2>First Name</h2></th>
+	<th class="subheader" colspan="2" align="center"><h2>Resume</h2></th>
 </tr>
 <% for users in @users %>
 	<% if users.profile.admin %>
@@ -18,7 +18,7 @@
 		<td><%= link_to users.profile.lastname, profile_path(users.profile), :class => "subtable" %></td>
 		<td><%= link_to users.profile.firstname, profile_path(users.profile), :class => "subtable" %></td>
 		<% if users.resume %>
-			<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(users.resume)}, :class => "subtable") %></center></td> 
+			<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(users.resume, :redbox => true)}, :class => "subtable") %></center></td> 
 			<td><center><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), users.resume.public_filename, :class => "subtable" %></center></td>
 		<% else %>
 			<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
