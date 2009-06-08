@@ -10,34 +10,34 @@
 	<th></th>
 </tr>
 <% for submissions in @submissions %>
-<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
-	<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_viewmag.png", :size => "20x20", :title => "View submission"), link_to_remote_options = {:url => submission_path(submissions.id), :method => :get}, :class => "subtable", :style => "cursor:auto;") %></td>
-	<td><%= link_to submissions.user.profile.firstname+" "+submissions.user.profile.lastname, profile_path(submissions.user.profile), :class => "subtable" %></td>
-	<td><%= link_to submissions.position.name, position_path(submissions.position), :class => "subtable" %></td>
-	<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>"><%= submissions.created_at.to_s(:short) %></td>
-	
-	<% if submissions.user.resume %>
-		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume, :redbox => true)}, :class => "subtable") %></td>
-		<td><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), submissions.user.resume.public_filename, :class => "subtable" %></td>
-	<% else %>
-		<td colspan="2" align="center"><%= link_to 'N/A', "#", :class => "subtable" %></td>
-	<% end %>
-	
-	<% if submissions.consider_for_interview == true %>
-		<td id="status<%= submissions.id %>" align="center" colspan="2">Approved</td>
-		<td id="accept_<%= submissions.id %>" align="center"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %></td>
-	<% end %>
-	
-	<% if submissions.consider_for_interview == false %>
-		<td id="status<%= submissions.id %>" align="center" colspan="2">Denied</td>
-		<td align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
-	<% end %>
-	
-	<% if submissions.consider_for_interview == nil %>
-			<td align="center" id="accept_<%= submissions.id %>"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
-			<td align="center" id="deny_<%= submissions.id %>"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable" } %></td>
-			<td align="center" id="change_<%= submissions.id %>" style="display:none;"></td>
-	<% end %>	
-</tr>
+	<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
+		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_viewmag.png", :size => "20x20", :title => "View submission"), link_to_remote_options = {:url => submission_path(submissions.id), :method => :get}, :class => "subtable", :style => "cursor:auto;") %></td>
+		<td><%= link_to submissions.user.profile.firstname+" "+submissions.user.profile.lastname, profile_path(submissions.user.profile), :class => "subtable" %></td>
+		<td><%= link_to submissions.position.name, position_path(submissions.position), :class => "subtable" %></td>
+		<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>"><%= submissions.created_at.to_s(:short) %></td>
+		
+		<% if submissions.user.resume %>
+			<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume, :redbox => true)}, :class => "subtable") %></td>
+			<td><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), submissions.user.resume.public_filename, :class => "subtable" %></td>
+		<% else %>
+			<td colspan="2" align="center"><%= link_to 'N/A', "#", :class => "subtable" %></td>
+		<% end %>
+		
+		<% if submissions.consider_for_interview == true %>
+			<td id="status<%= submissions.id %>" align="center" colspan="2">Approved</td>
+			<td id="accept_<%= submissions.id %>" align="center"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %></td>
+		<% end %>
+		
+		<% if submissions.consider_for_interview == false %>
+			<td id="status<%= submissions.id %>" align="center" colspan="2">Denied</td>
+			<td align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
+		<% end %>
+		
+		<% if submissions.consider_for_interview == nil %>
+				<td align="center" id="accept_<%= submissions.id %>"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
+				<td align="center" id="deny_<%= submissions.id %>"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable" } %></td>
+				<td align="center" id="change_<%= submissions.id %>" style="display:none;"></td>
+		<% end %>	
+	</tr>
 <% end %>
 </table>

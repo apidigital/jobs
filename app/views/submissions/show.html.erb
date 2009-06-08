@@ -1,32 +1,49 @@
-<h1>Application for "<%= @submission.position.name %>"</h1><br />
-<h2>
-	Submitted by:  
-	<%= link_to "#{@submission.user.profile.firstname} #{@submission.user.profile.lastname}", profile_path(@submission.user.profile) %> 
-	( <% if @submission.user.resume -%> 
-		<%= link_to @submission.user.resume.filename, @submission.user.resume.public_filename -%> 
-	<% else -%> 
-		No Resume 
-	<% end -%>)
-</h2>
-
-<%= link_to_function(image_tag("../../images/hide.png", :title => "Hide"), nil, :id => "hide") do |page|
-			page.visual_effect(:BlindUp, "questionnaire")
-			page.hide("hide")
-			page.show(:show)
-		end
-%>
-<%= link_to_function(image_tag("../../images/show.png", :title => "Show"), nil, :id => "show", :style => "display:none;") do |page|
-			page.visual_effect(:BlindDown, "questionnaire")
-			page.hide("show")
-			page.show(:hide)
-		end
-%>
-<% unless @submission.checked_on? %>
-	<%= link_to_remote image_tag("../../images/viewed.png", :title => "Mark as viewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "viewed"}  %>
-<% else %>
-	<%= link_to_remote image_tag("../../images/unviewed.png", :title => "Mark as unviewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "unviewed"}  %>	
-<% end %>
+<div class="topline">
+	<div class="totheleft">
+		<%= link_to "#{@submission.user.profile.firstname} #{@submission.user.profile.lastname}", profile_path(@submission.user.profile) %> / <%= link_to @submission.position.name, position_path(@submission.position.id) %>
+	</div>
+	<div class="totheright">
+		<% if @submission.user.resume %>
+			<%= link_to_remote_redbox(image_tag("../../images/resume.png", :title => "View resume"), link_to_remote_options = {:url => resume_path(@submission.user.resume, :redbox => true)}) %>
+		<% end %>
+		
+		<% if @submission.consider_for_interview == true %>
+			<%= link_to_remote image_tag("../../images/deny.png", :title => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => @submission}, :html => { :id => "deny_#{@submission.id}" } %>
+		<% end %>
+		
+		<% if @submission.consider_for_interview == false %>
+			<%= link_to_remote_redbox(image_tag("../../images/accept.png", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => @submission.id}}) %>
+		<% end %>
+		
+		<% if @submission.consider_for_interview == nil %>
+			<%= link_to_remote image_tag("../../images/deny.png", :title => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => @submission} %>
+			<%= link_to_remote_redbox(image_tag("../../images/accept.png", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => @submission.id}}) %>
+		<% end %>	
+		
+		<% unless @submission.checked_on? %>
+			<%= link_to_remote image_tag("../../images/viewed.png", :title => "Mark as viewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "viewed"}  %>
+		<% else %>
+			<%= link_to_remote image_tag("../../images/unviewed.png", :title => "Mark as unviewed"), :url => {:action => :mark, :id => @submission}, :html => {:id => "unviewed"}  %>	
+		<% end %>
+	</div>
+</div>
 <br />
+<div class="questionhead">
+	<div class="buttons">
+		<%= link_to_function(image_tag("../../images/hide.png", :title => "Hide"), nil, :id => "hide") do |page|
+					page.visual_effect(:BlindUp, "questionnaire")
+					page.hide("hide")
+					page.show(:show)
+				end
+		%>
+		<%= link_to_function(image_tag("../../images/show.png", :title => "Show"), nil, :id => "show", :style => "display:none;") do |page|
+					page.visual_effect(:BlindDown, "questionnaire")
+					page.hide("show")
+					page.show(:hide)
+				end
+		%>
+	</div>
+</div>
 <div id="questionnaire">
 	<% for question in @submission.position.questions %>
 	<ul>

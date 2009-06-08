@@ -70,16 +70,20 @@ a:hover {
 	font-size: 1.8em;
 }
 
+/*
 #wrap {
 	margin: 20px auto;
 	width: 90%;
 	min-width: 960px;
 	background: #fff 
 }
+*/
 
+/*
 #top { 
 	height: 30px;
 }
+*/
 
 #content {
 	padding: 0 40px 0 40px;
@@ -342,6 +346,21 @@ div.totheleft {
 	float:left;
 	display:block;
 	padding:5px;
+}
+
+div.new {
+	float:right;
+	display:block;
+}
+
+div.buttons {
+	float:right;
+	display:block;
+}
+
+div.questionhead {
+	display:block;
+	height:20px;
 }
 
 #bottombuttonsleft {

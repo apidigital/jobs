@@ -1,4 +1,7 @@
 <div class="categories">
+	<div class="new">
+		<%= link_to image_tag('../../images/new.png'), new_position_path %>
+	</div>
 	<b>Category filter: <%= link_to '(clear)', positions_path %></b><br />
 	<% for category in @categories %>
 		<%= link_to category.name, :controller => "positions", :action => "index", :query => category.id %>, 

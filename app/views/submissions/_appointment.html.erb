@@ -1,9 +1,3 @@
-<%#= link_to_close_redbox("<span style='background:#EEEEEE;display:block;margin-bottom:4px;border-bottom:1px dashed #000000'>[CANCEL]</span>") %>
-<%# form_for(appointment) do |f| %>
-	<%#= f.calendar_date_select :interview_scheduled, :embedded => true %>
-	<%#= f.submit "Submit" %>
-<%# end %>
-
 <div class="top" align="center"><%= link_to_close_redbox("Close") %></div>
 <pre class="rescont"><% form_for(appointment) do |f| %>
 	<%= f.calendar_date_select :interview_scheduled, :embedded => true %>
