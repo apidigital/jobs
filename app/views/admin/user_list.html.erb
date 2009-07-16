@@ -8,7 +8,7 @@
 	<th class="subheader" colspan="2" align="center"><h2>Resume</h2></th>
 </tr>
 <% for users in @users %>
-	<% if users.profile.admin %>
+	<% if users.profile.admin > 0 %>
 	<tr class="admin">
 	<% else %>
 	<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
@@ -23,7 +23,6 @@
 		<% else %>
 			<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
 		<% end %>
-		</td>
 	</tr>
 <% end %>
 </table>
