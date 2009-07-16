@@ -1,6 +1,21 @@
+<% if !position.active %>
+	<% unless current_user.nil? %>
+		<% unless current_user.profile.admin == 1 %>
+		
+		<% else %>
+			<div class="position invisible">
+				<span class="title"><%= unless current_page?(position) then link_to(position.name, position_path(position)) else position.name end%></span>
+				<div class="description">
+					<%= yield %> 
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+<% else %>
 <div class="position<%= " invisible" if !position.active %>">
 	<span class="title"><%= unless current_page?(position) then link_to(position.name, position_path(position)) else position.name end%></span>
 	<div class="description">
 		<%= yield %> 
 	</div>
 </div>
+<% end %>
