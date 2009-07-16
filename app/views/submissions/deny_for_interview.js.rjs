@@ -1,2 +1,8 @@
-page.replace_html "accept_#{@submission.id}", "#{link_to_remote_redbox(image_tag('../../images/Crystal_Clear_action_apply.png', :size => '20x20', :title => 'Approve submission'), link_to_remote_options = {:url => {:controller => 'submissions', :action => :appointment, :id => @submission.id}})}"
-page.replace_html "status#{@submission.id}", "Denied"
+page.if page["change_#{@submission.id}"] do
+	page.remove "accept_#{@submission.id}"
+	page.replace "deny_#{@submission.id}", "<td id='status#{@submission.id}' colspan='2' align='center'>Denied</td>"
+	page.replace "change_#{@submission.id}", "<td id='accept_#{@submission.id}' align='center'>#{link_to_remote_redbox(image_tag('../../images/Crystal_Clear_action_apply.png', :size => '20x20', :title => 'Approve submission'), link_to_remote_options = {:url => {:controller => 'submissions', :action => :appointment, :id => @submission.id}}, :class => 'subtable')}</td>"
+page.else
+	page.replace_html "status#{@submission.id}", "Denied"
+	page.replace "deny_#{@submission.id}", "<td id='accept_#{@submission.id}' align='center'>#{link_to_remote_redbox(image_tag('../../images/Crystal_Clear_action_apply.png', :size => '20x20', :title => 'Approve submission'), link_to_remote_options = {:url => {:controller => 'submissions', :action => :appointment, :id => @submission.id}}, :class => 'subtable')}</td>"
+end

@@ -25,12 +25,12 @@
 		
 		<% if submissions.consider_for_interview == true %>
 			<td id="status<%= submissions.id %>" align="center" colspan="2">Approved</td>
-			<td id="accept_<%= submissions.id %>" align="center"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %></td>
+			<td id="deny_<%= submissions.id %>" align="center"><%= link_to_remote image_tag("../../images/Crystal_Clear_action_editdelete.png", :size => "20x20", :alt => "Deny submission"), :url => {:controller => "submissions", :action => :deny_for_interview, :id => submissions}, :html => { :class  => "subtable"} %></td>
 		<% end %>
 		
 		<% if submissions.consider_for_interview == false %>
 			<td id="status<%= submissions.id %>" align="center" colspan="2">Denied</td>
-			<td align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
+			<td id="accept_<%= submissions.id %>" align="center"><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_apply.png", :size => "20x20", :title => "Approve submission"), link_to_remote_options = {:url => {:controller => "submissions", :action => :appointment, :id => submissions.id}}, :class => "subtable") %></td>
 		<% end %>
 		
 		<% if submissions.consider_for_interview == nil %>

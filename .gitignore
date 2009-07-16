@@ -9,3 +9,4 @@ doc/api
 doc/app
 db/*.sqlite3
 coverage/*
+config/database.yml
