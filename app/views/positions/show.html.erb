@@ -2,9 +2,11 @@
 	<br />
 	<%= textilize @position.description.gsub(/\s\s/, '<br />') %>
 <% end %>
+<% unless current_user.resume.nil? %>
 <div id="bottombuttonsleft">
 	<%= link_to image_tag("../../images/apply.png", :title => "Apply"), position_questions_path(@position) %> 
 </div>
+<% end %>
 <div id="bottombuttonsright">
 	<script type="text/javascript">var addthis_pub="4a140e7c30514c70";</script>
 	<a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script><!-- AddThis Button END -->

@@ -1,5 +1,5 @@
 <div class="application">
-<%= link_to_close_redbox("<center>CLOSE</center>") %>
+<div style="position:relative;float:right;"><%= link_to_close_redbox(image_tag("../../images/Crystal_Clear_action_reload.png", :width => 35, :height => 35, :style => "padding-bottom:9px;")) %><%= link_to image_tag("../../images/Crystal_Clear_action_loopnone.png", :width => 50, :height => 50), :controller => "submissions", :action => "show", :id => submission.id %></div>
 <h1>Application for "<%= submission.position.name %>"</h1><br />
 <h2>
 	Submitted by:  

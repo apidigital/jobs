@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # Pick a unique cookie name to distinguish our session data from others'
   session :session_key => '_jobs_session_id'
   
-  before_filter :load_categories_for_sidebar, :admin_check
+  before_filter :load_categories_for_sidebar, :admin_check, :resume_check
   
   helper_method :context
   def context
@@ -30,5 +30,11 @@ class ApplicationController < ActionController::Base
     unless read_fragment('sidebar')
       @sidebar_categories = Category.find(:all)
     end
+  end
+  
+  def resume_check
+  	if current_user && current_user.resume.nil?
+  		flash.now[:error] = "You must upload a resume to apply for positions!"
+  	end
   end
 end

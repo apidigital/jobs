@@ -144,6 +144,7 @@ a.errors {
 	padding: 5px;
 	display:block;
 	cursor: default;
+	color:#000000;
 }
 
 .notices {

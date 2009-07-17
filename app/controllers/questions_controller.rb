@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 skip_before_filter :admin_check, :only => [:index, :show]
 before_filter :login_check, :only => [ :index, :new ]
+before_filter :resume_check, :only => [:index]
   # GET /questions
   # GET /questions.xml
   def index
@@ -131,5 +132,11 @@ before_filter :login_check, :only => [ :index, :new ]
     unless logged_in?
       redirect_to('/login')
     end
+  end
+  
+  def resume_check
+  	if current_user.resume.nil?
+  		redirect_to position_path(params[:position_id])
+  	end
   end
 end
