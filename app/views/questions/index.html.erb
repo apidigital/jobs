@@ -13,6 +13,7 @@
 			<%= link_to '(Remove)', question, :confirm => 'Are you sure?', :method => :delete %>
 		<% end %></li>
 		<% fields_for :answer do |f| %>
+			<%= f.error_messages %>
 			<%= f.hidden_field(:question_id, :index => question.id, :value => question.id)%>
 			<% prev = question.answers.find_by_user_id(current_user.id).content if question.answers.find_by_user_id(current_user.id) %>
 			<%= f.text_area :content,  :index => question.id, :value => prev  %>
