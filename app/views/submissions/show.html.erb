@@ -79,7 +79,7 @@
 	<%= f.hidden_field :interview_scheduled, :value => "" %>
 	<%= f.submit "Clear Interview" %>
 	<% end %>
-	<% if @submission.conflicts.empty? %>	
+	<% unless @submission.conflicts.empty? %>	
 		<h3>Possible Conflicts</h3>
 		<% for submission in @submission.conflicts %>
 			<% if submission != @submission %>

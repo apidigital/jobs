@@ -27,4 +27,13 @@ class AdminController < ApplicationController
   def pending_interviews
   	@submissions = Submission.interview_step
   end
+  
+  def scheduler
+  	@submissions = Submission.scheduled_interviews
+  end
+  
+  def get_interviews
+  	@submissions = Submission.scheduled_interviews
+  	render :partial => "scheduler_daylist", :object => @submissions, :locals => {:formtime => params[:date]}
+  end
 end

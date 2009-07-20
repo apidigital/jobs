@@ -1,8 +1,11 @@
+<div "scheduler" style="display:show;">
+	
+</div>
+<%= render :partial => "scheduler" %>
 <% @submissions.each do |submission| %>
-	<div id="appointment_<%= submission.id %>" ><!--style="display:none;" > -->
-	First name: <%= submission.user.profile.firstname %><br />
-	Position: <%= submission.position.name %><br />
-		<%# form_tag :controller => "submissions", :action => submission.id, :id => submission.id, :method => "post", :class => "edit_submission", :id => "edit_submission_{#submission.id}" do %>
+	<div id="appointment_<%= submission.id %>" >
+		First name: <%= submission.user.profile.firstname %><br />
+		Position: <%= submission.position.name %><br />
 		<% remote_form_for submission, :loading => visual_effect(:appear, 'spinner'),
 																	 :complete => visual_effect(:fade, "appointment_#{submission.id}"),
 																	 :html => { :id => "interview_#{submission.id}" } do |f| %>
