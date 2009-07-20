@@ -1,0 +1,10 @@
+First name: <%= @submissions.user.profile.firstname %><br />
+	Position: <%= @submissions.position.name %><br />
+<form action="/submissions/<%= @submissions.id %>" class="edit_submission" id="edit_submission_<%= @submissions.id %>" method="post">
+	<div style="margin: 0pt; padding: 0pt;">
+		<input name="_method" value="put" type="hidden">
+	</div>
+	<input id="submission_interview_scheduled" name="submission[interview_scheduled]" size="30" type="text">
+	<img alt="Calendar" onclick="new CalendarDateSelect( $(this).previous(), {time:true, year_range:10} );" src="/images/calendar_date_select/calendar.gif?1217620690" style="border: 0px none ; cursor: pointer;">
+	<input id="submission_submit" name="commit" value="Schedule" type="submit">
+</form>

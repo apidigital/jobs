@@ -65,7 +65,7 @@ class SubmissionsController < ApplicationController
     @submission.consider_for_interview = true
     respond_to do |format|
       if @submission.update_attributes(params[:submission])
-        flash[:notice] = 'Submission was successfully updated.'
+        flash.now[:notice] = 'Submission was successfully updated.'
         format.html { redirect_to(@submission) }
         format.xml  { head :ok }
       else

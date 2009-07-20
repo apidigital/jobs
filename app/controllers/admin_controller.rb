@@ -23,4 +23,8 @@ class AdminController < ApplicationController
   def unchecked
     @submissions = Submission.unchecked
   end
+  
+  def pending_interviews
+  	@submissions = Submission.interview_step
+  end
 end
