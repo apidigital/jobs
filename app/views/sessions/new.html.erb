@@ -101,6 +101,13 @@
 					<label for="eveningphone">Evening Phone</label>
 					<%= profile.text_field :eveningphone %>
 				</div>
+				<br />
+				<% if current_user && current_user.profile.admin? %>
+					<div class="field">
+						<label for="admin">Admin?</label>
+						<%= profile.check_box :admin %>
+					</div>
+				<% end %>
 			<% end %>
 			<br />
 			<div class="field">
