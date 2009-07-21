@@ -5,6 +5,12 @@ class AdminController < ApplicationController
   
   def user_list
     @users = User.find(:all)
+  	@admins = Array.new
+  	@users.each do |user|
+	  	if user.profile.admin == 1
+	  		@admins << user
+	  	end
+	  end
   end
 
   def positions

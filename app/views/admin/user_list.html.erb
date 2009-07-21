@@ -1,3 +1,28 @@
+<h1>Administrators</h1><br />
+<table width="100%" class="sortable">
+<tr>
+	<th></th>
+	<th class="subheader" align="center"><h2>Login</h2></th>
+	<th class="subheader" align="center"><h2>Last Name</h2></th>
+	<th class="subheader" align="center"><h2>First Name</h2></th>
+	<th class="subheader" colspan="2" align="center"><h2>Resume</h2></th>
+</tr>
+<% for admin in @admins %>
+	<tr class="admin">
+		<td><%= link_to image_tag("../../images/Crystal_Clear_action_edit.png", :size => "20x20", :alt => "View submission"), edit_profile_path(admin.profile), :class => "subtable", :style => "cursor:auto;" %></td>
+		<td><%= link_to admin.login, :class => "subtable" %></td>
+		<td><%= link_to admin.profile.lastname, profile_path(admin.profile), :class => "subtable" %></td>
+		<td><%= link_to admin.profile.firstname, profile_path(admin.profile), :class => "subtable" %></td>
+		<% if admin.resume %>
+			<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(admin.resume, :redbox => true)}, :class => "subtable") %></center></td> 
+			<td><center><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), admin.resume.public_filename, :class => "subtable" %></center></td>
+		<% else %>
+			<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
+		<% end %>
+	</tr>
+<% end %>
+</table>
+<br />
 <h1>Users</h1><br />
 <table width="100%" class="sortable">
 <tr>
@@ -8,21 +33,19 @@
 	<th class="subheader" colspan="2" align="center"><h2>Resume</h2></th>
 </tr>
 <% for users in @users %>
-	<% if users.profile.admin > 0 %>
-	<tr class="admin">
-	<% else %>
-	<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
+	<% unless users.profile.admin == 1 %>
+		<tr class="normal" onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'">
+			<td><%= link_to image_tag("../../images/Crystal_Clear_action_edit.png", :size => "20x20", :alt => "View submission"), edit_profile_path(users.profile), :class => "subtable", :style => "cursor:auto;" %></td>
+			<td><%= link_to users.login, :class => "subtable" %></td>
+			<td><%= link_to users.profile.lastname, profile_path(users.profile), :class => "subtable" %></td>
+			<td><%= link_to users.profile.firstname, profile_path(users.profile), :class => "subtable" %></td>
+			<% if users.resume %>
+				<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(users.resume, :redbox => true)}, :class => "subtable") %></center></td> 
+				<td><center><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), users.resume.public_filename, :class => "subtable" %></center></td>
+			<% else %>
+				<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
+			<% end %>
+		</tr>
 	<% end %>
-		<td><%= link_to image_tag("../../images/Crystal_Clear_action_edit.png", :size => "20x20", :alt => "View submission"), edit_profile_path(users.profile), :class => "subtable", :style => "cursor:auto;" %></td>
-		<td><%= link_to users.login, :class => "subtable" %></td>
-		<td><%= link_to users.profile.lastname, profile_path(users.profile), :class => "subtable" %></td>
-		<td><%= link_to users.profile.firstname, profile_path(users.profile), :class => "subtable" %></td>
-		<% if users.resume %>
-			<td><center><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(users.resume, :redbox => true)}, :class => "subtable") %></center></td> 
-			<td><center><%= link_to image_tag("../../images/Crystal_Clear_app_harddrive.png", :size => "20x20", :title => "Download Resume"), users.resume.public_filename, :class => "subtable" %></center></td>
-		<% else %>
-			<td colspan="2"><center><%= link_to 'N/A', "#", :class => "subtable" %></center></td>
-		<% end %>
-	</tr>
 <% end %>
 </table>
