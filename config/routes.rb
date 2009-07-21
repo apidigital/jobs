@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.change_password '/change_password', :controller => 'users', :action => 'change_password'
   map.resume 'resumes/:id', :controller => 'resumes', :action => 'show'
+  map.success '/success', :controller => 'front', :action => 'success'
   # The priority is based upon order of creation: first created -> highest priority.
   
   # Sample of regular route:

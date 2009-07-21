@@ -53,11 +53,11 @@ class AnswersController < ApplicationController
       @submission = @position.submissions.new
       @submission.user = current_user
       respond_to do |format|
-		    if @submission.save
-		    	flash[:notice] = 'Application was successfully appended.<br />'
-		    	redirect_to("/")
+		    if @submission.save && @answer.save
+# 		    	flash[:notice] = 'Application was successfully submitted.'
+		    	format.html { redirect_to success_path }
 		    else
-		    	redirect_to position_questions_path(params[:position_id])
+		    	format.html { redirect_to position_questions_path(params[:position_id]) }
 		    end
 		  end
   end
