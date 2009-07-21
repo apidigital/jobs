@@ -1,6 +1,6 @@
 <h1><%= context.name %></h1><br />
 <% if current_user && current_user.profile.admin? %>
-<%= link_to "New Question", new_position_question_path %>
+	<%= link_to "New Question", new_position_question_path %>
 <% end %>
 <%#Took this partial out because this page needs to have a form for applicants to fill out.%>
 <%#= render :partial => 'question_list', :collection => @questions %>

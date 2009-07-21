@@ -42,46 +42,24 @@ class AnswersController < ApplicationController
   # POST /answers.xml
   def create
     checksub = Submission.find_by_user_id_and_position_id(current_user.id, context.id)
-    if checksub
-      flash[:notice] = 'You have already applied for this position!'
-      format.html { redirect_to("/") }
-    end
-    if params[:save]
-      for answer in params[:answer]
-        oldquestion = Answer.find_by_user_id_and_question_id(current_user.id, answer[1][:question_id])
-        oldquestion.destroy if oldquestion
-        @answer = Answer.new(answer[1])
-        @answer.user = current_user
-        @answer.save!
-      end
-    end
-    if params[:apply]
-      if params[:answer]
-       for answer in params[:answer]
-         oldquestion = Answer.find_by_user_id_and_question_id(current_user.id, answer[1][:question_id])
-         oldquestion.destroy if oldquestion
-         @answer = Answer.new(answer[1])
-         @answer.user = current_user
-         @answer.save!
-       end
-     end
+			if params[:answer]
+	    	for answer in params[:answer]
+		      @answer = Answer.new(answer[1])
+		      @answer.user = current_user
+		      @answer.save!
+	    	end
+	    end
       @position = Position.find(params[:position_id])
       @submission = @position.submissions.new
       @submission.user = current_user
-      @submission.save!
-    end
-    respond_to do |format|
-      flash[:notice] = 'Application was successfully appended.<br />'
-      unless current_user.resume
-      	flash[:notice] += '<b>Please upload a resume to your profile!</b>'
-      end
-      format.html { redirect_to("/") }
-    end
-    # rescue
-#       respond_to do |format|
-#         format.html { render :action => "new" }
-#         format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
-#       end
+      respond_to do |format|
+		    if @submission.save
+		    	flash[:notice] = 'Application was successfully appended.<br />'
+		    	redirect_to("/")
+		    else
+		    	redirect_to position_questions_path(params[:position_id])
+		    end
+		  end
   end
 
   # PUT /answers/1
