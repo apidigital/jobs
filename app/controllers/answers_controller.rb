@@ -42,21 +42,31 @@ class AnswersController < ApplicationController
   # POST /answers.xml
   def create
     checksub = Submission.find_by_user_id_and_position_id(current_user.id, context.id)
+    @safe = true
 			if params[:answer]
-	    	for answer in params[:answer]
-		      @answer = Answer.new(answer[1])
-		      @answer.user = current_user
-		      @answer.save!
-	    	end
+	    for answer in params[:answer]
+	    	answer[1][user] = current_user
+# 	      @answer << answer[1]
+# 	      @answer.user = current_user
+	      if @answer.valid?
+	      	answer[1][user] = current_user
+		      @answer << answer[1]
+		    else
+		    	@safe = false
+		    end
+	    end
 	    end
       @position = Position.find(params[:position_id])
       @submission = @position.submissions.new
       @submission.user = current_user
       respond_to do |format|
-		    if @submission.save && @answer.save
+		    if @safe == true
+		    	if @submission.save# && @answer.save!
 # 		    	flash[:notice] = 'Application was successfully submitted.'
-		    	format.html { redirect_to success_path }
+			    	format.html { redirect_to success_path }
+		    	end
 		    else
+		    	flash[:error] = "You must complete all answer fields!"
 		    	format.html { redirect_to position_questions_path(params[:position_id]) }
 		    end
 		  end
