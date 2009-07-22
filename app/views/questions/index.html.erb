@@ -2,8 +2,7 @@
 <% if current_user && current_user.profile.admin? %>
 	<%= link_to "New Question", new_position_question_path %>
 <% end %>
-<%#Took this partial out because this page needs to have a form for applicants to fill out.%>
-<%#= render :partial => 'question_list', :collection => @questions %>
+<p><b><span style="color:#FF0000">REMEMBER TO FILL OUT ALL QUESTIONS TO THE BEST OF YOUR ABILITY!</span></b></p>
 <% form_for(@answer) do |j| %>
 <input id="position_id" name="position_id" type="hidden" value="<%= context.id %>" />
 	<ul>
@@ -12,16 +11,16 @@
 		<% if current_user && current_user.profile.admin? %>
 			<%= link_to '(Remove)', question, :confirm => 'Are you sure?', :method => :delete %>
 		<% end %></li>
-		<%# fields_for :answer do |f| %>
+		<% fields_for :answer do |f| %>
 			<%#= f.error_messages %>
-			<%#= f.hidden_field(:question_id, :index => question.id, :value => question.id)%>
-			<%# prev = question.answers.find_by_user_id(current_user.id).content if question.answers.find_by_user_id(current_user.id) %>
-			<%#= f.text_area :content,  :index => question.id, :value => prev  %>
-		<%# end %>
-		<% fields_for :answers do |f| %>
-			<%= f.error_messages %>
-			<%= f.text_area :content %>
+			<%= f.hidden_field(:question_id, :index => question.id, :value => question.id)%>
+			<% prev = question.answers.find_by_user_id(current_user.id).content if question.answers.find_by_user_id(current_user.id) %>
+			<%= f.text_area :content,  :index => question.id, :value => prev  %>
 		<% end %>
+		<%# fields_for :answers do |f| %>
+			<%#= f.error_messages %>
+			<%#= f.text_area :content %>
+		<%# end %>
 	<% end %>
 	</ul>
 	<% if !@submission %>

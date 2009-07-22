@@ -40,33 +40,38 @@ class AnswersController < ApplicationController
 
   # POST /answers
   # POST /answers.xml
+  # Pretty ashamed at how this action turned out. If I had more time, I would redo answers
+  # from the ground up. THIS NEEDS WORK BADLY!
   def create
     checksub = Submission.find_by_user_id_and_position_id(current_user.id, context.id)
     @safe = true
+    @answer = Array.new
 			if params[:answer]
-	    for answer in params[:answer]
-	    	answer[1][user] = current_user
-# 	      @answer << answer[1]
-# 	      @answer.user = current_user
-	      if @answer.valid?
-	      	answer[1][user] = current_user
+	    	for answer in params[:answer]
 		      @answer << answer[1]
-		    else
-		    	@safe = false
-		    end
-	    end
+# 		      @answer.user = current_user
+		      if answer[1]['content'].empty?
+		      	@safe = false
+		      end
+# 		      @answer.save!
+	    	end
 	    end
       @position = Position.find(params[:position_id])
       @submission = @position.submissions.new
       @submission.user = current_user
       respond_to do |format|
-		    if @safe == true
-		    	if @submission.save# && @answer.save!
-# 		    	flash[:notice] = 'Application was successfully submitted.'
+      	if @safe == true
+      		@answer.each do |answer|
+      			passthrough = Answer.new(answer)
+      			passthrough.user_id = current_user
+      			passthrough.save!
+      		end
+			    if @submission.save# && @answer.save
+	# 		    	flash[:notice] = 'Application was successfully submitted.'
 			    	format.html { redirect_to success_path }
-		    	end
+			    end
 		    else
-		    	flash[:error] = "You must complete all answer fields!"
+		    	flash[:error] = 'You must fill out ALL answer fields!'
 		    	format.html { redirect_to position_questions_path(params[:position_id]) }
 		    end
 		  end
