@@ -110,6 +110,12 @@ class SubmissionsController < ApplicationController
     @submission.save!
   end
   
+  def approve_for_interview
+  	@submission = Submission.find(params[:id])
+  	@submission.consider_for_interview = true
+  	@submission.save!
+  end
+  
   def appointment
   	@submission = Submission.find(params[:id])
   	render :partial => "appointment", :object => @submission

@@ -1,1 +1,9 @@
-page.replace_html "status#{@submission.id}", "Approved"
+page << "RedBox.close();"
+page.if page["change_#{@submission.id}"] do
+	page.remove "deny_#{@submission.id}"
+	page.replace "approve_#{@submission.id}", "<td id='status#{@submission.id}' colspan='2' align='center'>Approved</td>"
+	page.replace "change_#{@submission.id}", "<td id='deny_#{@submission.id}' align='center'>#{link_to_remote image_tag('../../images/Crystal_Clear_action_editdelete.png', :size => '20x20', :alt => 'Deny submission'), :url => {:controller => 'submissions', :action => :deny_for_interview, :id => @submission}, :html => { :class  => 'subtable'}}</td>"
+page.else
+	page.replace_html "status#{@submission.id}", "Approved"
+	page.replace "accept_#{@submission.id}", "<td id='deny_#{@submission.id}' align='center'>#{link_to_remote image_tag('../../images/Crystal_Clear_action_editdelete.png', :size => '20x20', :alt => 'Deny submission'), :url => {:controller => 'submissions', :action => :deny_for_interview, :id => @submission}, :html => { :class  => 'subtable'}}</td>"
+end

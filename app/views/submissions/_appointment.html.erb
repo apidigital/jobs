@@ -1,7 +1,7 @@
-<div class="top" align="center"><%= link_to_close_redbox("Close") %></div>
+<div class="top" align="center"><%= link_to_remote "Approve without setting date", :url => {:controller => "submissions", :action => :approve_for_interview, :id => @submission} %></div>
 <pre class="rescont"><% form_for(appointment) do |f| %>
 	<%= f.calendar_date_select :interview_scheduled, :embedded => true %>
 	<%= f.submit "Submit" %>
 <% end %>
 </pre>
-<div class="bottom" align="center"><%= link_to_close_redbox("Close") %></div>
+<div class="bottom" align="center"><%= link_to_remote "Approve without setting date", :url => {:controller => "submissions", :action => :approve_for_interview, :id => @submission} %></div>
