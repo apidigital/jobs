@@ -101,6 +101,7 @@ a:hover {
 	background: #85ACF7;
 	border:1px solid #E1E1E1;
 	border-bottom:none;
+	border-top:none;
 }
 
 .header h1 {
@@ -134,6 +135,7 @@ a:hover {
 
 a.notices {
 	background: #C2DC72;
+	border:0px;
 	border-top: 1px solid #1A8105;
 	padding: 5px;
 	display:block;
@@ -144,8 +146,13 @@ a.notices {
 	width:100%;
 }
 
+a.notices:hover {
+	text-decoration:none;
+}
+
 a.errors {
 	background: #ff3e31;
+	border:0px;
 	border-top: 1px solid #b32b23;
 	padding: 5px;
 	display:block;
@@ -155,9 +162,10 @@ a.errors {
 	left:0px;
 	position: fixed;
 	width:100%;
-/*
-	float:left;
-*/
+}
+
+a.errors:hover {
+	text-decoration:none;
 }
 
 .notices {
