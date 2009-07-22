@@ -2,16 +2,15 @@
 <ul class="asdf">
 	<li class="asdf"><%= link_to "Management", :controller => 'resource_management' %></li>
 	<li class="asdf"><%= link_to "Positions", positions_path %></li>
+	<li class="asdf"><%= link_to 'Categories', :controller => "categories" %></li>
 	<li class="asdf"><%= link_to 'Users', :controller => "admin", :action => "user_list" %>
 		<ul class="asdf">
 			<li class="asdf"><%= link_to 'Create', login_path %></li>
 		</ul>
-	</li>
-	<li class="asdf"><%= link_to 'Categories', :controller => "categories" %></li>
-	<li class="asdf"><%= link_to 'Applications', :controller => "submissions" %>
+	</li>	<li class="asdf"><%= link_to 'Applications', :controller => "submissions" %>
 		<ul class="asdf">
 			<li class="asdf"><%= link_to 'Pending', :controller => "admin", :action => "pending_interviews" %></li>
-			<li class="asdf"><%= link_to 'Schedule', :controller => "admin", :action => "scheduler" %></li>
+<!-- 			<li class="asdf"><%#= link_to 'Schedule', :controller => "admin", :action => "scheduler" %></li> -->
 		</ul>
 	</li>
 </ul>

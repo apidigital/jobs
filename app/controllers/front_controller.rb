@@ -1,5 +1,5 @@
 class FrontController < ApplicationController
-skip_before_filter :admin_check, :only => [:index]
+skip_before_filter :admin_check, :only => [:index, :success]
   def index
     #@positions = Position.find(:all)
     @categories = Category.find(:all)

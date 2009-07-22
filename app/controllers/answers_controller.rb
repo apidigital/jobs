@@ -63,7 +63,7 @@ class AnswersController < ApplicationController
       	if @safe == true
       		@answer.each do |answer|
       			passthrough = Answer.new(answer)
-      			passthrough.user_id = current_user
+      			passthrough.user_id = current_user.id
       			passthrough.save!
       		end
 			    if @submission.save# && @answer.save
