@@ -107,6 +107,10 @@ class SubmissionsController < ApplicationController
   def deny_for_interview
     @submission = Submission.find(params[:id])
     @submission.consider_for_interview = false
+    @submission.interview_scheduled = ''
+    @submission.interview_accepted = ''
+    @submission.position_offered = ''
+    @submission.start_date = ''
     @submission.save!
   end
   
