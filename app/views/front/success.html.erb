@@ -1,1 +1,6 @@
-<h1>Application successfully submitted. We have your information on file and will take a look at it. Thank you!</h1>
+<% unless @message.nil? %>
+	<h1><%=h @message.content %></h1>
+<% else %>
+	<h1>Success!</h1><br />
+	Notice: Custom message not set/found.
+<% end %>

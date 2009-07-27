@@ -9,4 +9,8 @@ skip_before_filter :admin_check, :only => [:index, :success]
       @positions = Position.paginate :page => params[:page], :per_page => 5, :order => 'updated_at DESC', :conditions => { :active => true }
     end
   end
+  
+  def success
+  	@message = Message.find_by_title('success')
+  end
 end

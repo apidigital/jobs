@@ -10,7 +10,11 @@
 	</li>	<li class="asdf"><%= link_to 'Applications', :controller => "submissions" %>
 		<ul class="asdf">
 			<li class="asdf"><%= link_to 'Pending', :controller => "admin", :action => "pending_interviews" %></li>
-<!-- 			<li class="asdf"><%#= link_to 'Schedule', :controller => "admin", :action => "scheduler" %></li> -->
+		</ul>
+	</li>
+	<li class="asdf"><%= link_to 'Messages', messages_path %>
+		<ul class="asdf">
+			<li class="asdf"><%= link_to 'Success', success_message_url %></li>
 		</ul>
 	</li>
 </ul>

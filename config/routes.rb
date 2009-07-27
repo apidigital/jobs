@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.success_message 'messages/success', :controller => 'messages', :action => 'success'
+	map.resources :messages
   map.resources :submissions
   map.resources :resumes
   map.resources :front

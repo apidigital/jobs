@@ -1,0 +1,4 @@
+<% @messages.each do |message| %>
+	<p><b>Title:</b> <%=h message.title %></p>
+	<p><b>Content:</b> <%=h message.content %><br /><%= link_to '(edit)', edit_message_path(message) %></p><br /><br />
+<% end %>
