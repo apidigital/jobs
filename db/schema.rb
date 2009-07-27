@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090727170132) do
+ActiveRecord::Schema.define(:version => 20090727184949) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20090727170132) do
     t.boolean  "interview_accepted"
     t.boolean  "position_offered"
     t.datetime "start_date"
+    t.boolean  "notified"
   end
 
   create_table "users", :force => true do |t|

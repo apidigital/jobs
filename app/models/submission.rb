@@ -25,4 +25,15 @@ class Submission < ActiveRecord::Base
   def conflicts
     Submission.find(:all, :conditions => ["interview_scheduled BETWEEN ? AND ? AND id != ?", interview_scheduled.ago(29.minutes), interview_scheduled.since(29.minutes), self.id])
   end
+  
+  def self.notify_denied_submissions
+  	@submissions = Submission.denied_questionnaires
+  	if @submissions
+	  	@submissions.each do |submission|
+	  		submission.notified = true
+	  		DenialMailer.deliver_denied(submission)
+	  		submission.save!
+	  	end
+	  end
+  end
 end

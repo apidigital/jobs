@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :test
 
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)
@@ -56,6 +56,8 @@ Rails::Initializer.run do |config|
   # See Rails::Configuration for more options
   
   config.gem 'RedCloth'
+  # Just including to make sure people have the gem installed on their system.
+  config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
 end
 
 # Add new mime types for use in respond_to blocks:
