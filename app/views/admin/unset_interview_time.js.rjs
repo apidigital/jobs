@@ -1,0 +1,4 @@
+page.visual_effect(:fade, "submission_#{@submission.id}")
+page.insert_html :bottom, "appointment_container", :partial => "interview_set", :locals => {:submission => @submission}
+page.visual_effect(:appear, "appointment_#{@submission.id}")
+page.remove("submission_#{@submission.id}")

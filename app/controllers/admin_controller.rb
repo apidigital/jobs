@@ -43,4 +43,10 @@ class AdminController < ApplicationController
   	@submissions = Submission.scheduled_interviews
   	render :partial => "scheduler_daylist", :object => @submissions, :locals => {:formtime => params[:date]}
   end
+  
+  def unset_interview_time
+  	@submission = Submission.find(params[:id])
+  	@submission.interview_scheduled = ''
+  	@submission.save!
+  end
 end

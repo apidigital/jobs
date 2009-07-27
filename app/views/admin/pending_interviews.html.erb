@@ -1,7 +1,5 @@
-<div "scheduler" style="display:show;">
-	
-</div>
 <%= render :partial => "scheduler", :object => @submissions_for_day %>
+<div id="appointment_container">
 <% @submissions.each do |submission| %>
 	<div id="appointment_<%= submission.id %>" >
 		First name: <%= submission.user.profile.firstname %><br />
@@ -14,3 +12,4 @@
 		<% end %>
 	</div>
 <% end %>
+</div>

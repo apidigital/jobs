@@ -1,0 +1,10 @@
+<div id="appointment_<%= submission.id %>">
+	First name: <%= submission.user.profile.firstname %><br />
+	Position: <%= submission.position.name %><br />
+	<% remote_form_for submission, :loading => visual_effect(:appear, 'spinner'),
+																 :complete => visual_effect(:fade, "appointment_#{submission.id}"),
+																 :html => { :id => "interview_#{submission.id}" } do |f| %>
+		<%= f.calendar_date_select :interview_scheduled, :id => "interview_scheduled_#{submission.id}" %>
+		<%= f.submit "Submit" %>
+	<% end %>
+</div>
