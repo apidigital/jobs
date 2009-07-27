@@ -1,11 +1,18 @@
 <%= calendar_date_select_tag :maincalendar, Time.now, :embedded => true, :onchange => remote_function (:update => "interviews", :url => { :action => "get_interviews" }, :with => "'date='+$F(this)") %>
 <div id="interviews">
 	Time: <%= Time.now.strftime("%B %d, %Y") %><br />
-	<% unless @submissions.blank? %>
-		<% @submissions.each do |submission| %>
+	<% unless @submissions_for_day.blank? %>
+		<% @submissions_for_day.each do |submission| %>
 			<% unless submission.interview_scheduled.nil? %>
 				<% if Time.now.strftime("%B %d, %Y") == submission.interview_scheduled.strftime("%B %d, %Y") %>
-					<span <%= 'class="conflict"' if !submission.conflicts.empty? %>><%= submission.user.profile.firstname %> <%= submission.user.profile.lastname %> for <%= link_to submission.position.name, submission_path(submission.id) %> @ <%= submission.interview_scheduled.strftime("%H:%M %p") %></span><br />
+					<span id="submission_<%= submission.id %>" <%= 'class="conflict"' if !submission.conflicts.empty? %>>
+						<%= submission.user.profile.firstname %>
+						<%= submission.user.profile.lastname %>
+						for
+						<%= link_to submission.position.name, submission_path(submission.id) %>
+						@
+						<%= submission.interview_scheduled.strftime("%H:%M %p") %>
+					</span><br />
 				<% end %>
 			<% end %>
 	<% end %>

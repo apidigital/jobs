@@ -1,6 +1,14 @@
 Time: <%= formtime %><br />
 <% @submissions.each do |submission| %>
 	<% if formtime == submission.interview_scheduled.strftime("%B %d, %Y") %>
-		<span <%= 'class="conflict"' if !submission.conflicts.empty? %>><%= submission.user.profile.firstname %> <%= submission.user.profile.lastname %> for <%= link_to submission.position.name, submission_path(submission.id) %> @ <%= submission.interview_scheduled.strftime("%H:%M %p") %></span><br />
+		<span id="submission_<%= submission.id %>" <%= 'class="conflict"' if !submission.conflicts.empty? %>>
+			<%= submission.user.profile.firstname %>
+			<%= submission.user.profile.lastname %>
+			for
+			<%= link_to submission.position.name, submission_path(submission.id) %>
+			@
+			<%= submission.interview_scheduled.strftime("%H:%M %p") %>
+		</span><br />
 	<% end %>
 <% end %>
+<hr />

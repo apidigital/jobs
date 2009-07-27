@@ -23,6 +23,6 @@ class Submission < ActiveRecord::Base
   end
   
   def conflicts
-    Submission.find(:all, :conditions => ["interview_scheduled BETWEEN ? AND ? AND id != ?", interview_scheduled.ago(2.hours), interview_scheduled.since(2.hours), self.id])
+    Submission.find(:all, :conditions => ["interview_scheduled BETWEEN ? AND ? AND id != ?", interview_scheduled.ago(29.minutes), interview_scheduled.since(29.minutes), self.id])
   end
 end

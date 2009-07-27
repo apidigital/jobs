@@ -32,6 +32,7 @@ class AdminController < ApplicationController
   
   def pending_interviews
   	@submissions = Submission.interview_step
+  	@submissions_for_day = Submission.scheduled_interviews
   end
   
   def scheduler

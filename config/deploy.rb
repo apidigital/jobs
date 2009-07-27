@@ -1,4 +1,4 @@
-set :application, "jobs.apid.com"
+set :application, "beta.jobs.apid.com"
 set :repository,  "svn://svn.apid.com/jobs/trunk"
 
 # If you aren't deploying to /u/apps/#{application} on the target

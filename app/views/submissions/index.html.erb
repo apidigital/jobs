@@ -14,7 +14,7 @@
 		<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_viewmag.png", :size => "20x20", :title => "View submission"), link_to_remote_options = {:url => submission_path(submissions.id), :method => :get, :id => submissions.id}, :class => "subtable", :style => "cursor:auto;") %></td>
 		<td><%= link_to submissions.user.profile.lastname+", "+submissions.user.profile.firstname, profile_path(submissions.user.profile), :class => "subtable" %></td>
 		<td><%= link_to submissions.position.name, position_path(submissions.position), :class => "subtable" %></td>
-		<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>"><%= submissions.created_at.to_s(:short) %></td>
+		<td sorttable_customkey="<%= submissions.created_at.to_s(:db) %>"><%= submissions.created_at.to_s(:long) %></td>
 		
 		<% if submissions.user.resume %>
 			<td><%= link_to_remote_redbox(image_tag("../../images/Crystal_Clear_action_window_new.png", :size => "20x20", :title => "Preview Resume"), link_to_remote_options = {:url => resume_path(submissions.user.resume, :redbox => true)}, :class => "subtable") %></td>
